@@ -1,18 +1,18 @@
 <script setup>
 useHead({
   htmlAttrs: { lang: 'fr' },
-  title: 'Lamyakun - impressive personal website',
-  meta: [{ name: 'description', content: 'An impressive personal website about Lamyakun' }],
+  title: 'Adama Niasse — Systems Engineer',
+  meta: [{ name: 'description', content: 'Adama Niasse — Systems Engineer, Full Stack Developer, DevOps & Cybersecurity. Building distributed, secure and scalable systems.' }],
 })
 
 useSeoMeta({
   charset: 'utf-8',
-  author: 'Lamyakun',
-  title: 'Lamyakun - impressive personal website',
-  ogTitle: 'Lamyakun - impressive personal website',
-  description: 'An impressive personal website about Lamyakun',
-  ogDescription: 'An impressive personal website about Lamyakun',
-  ogImage: '/public/images/thumbnail.png',
+  author: 'Adama Niasse',
+  title: 'Adama Niasse — Systems Engineer',
+  ogTitle: 'Adama Niasse — Systems Engineer',
+  description: 'Adama Niasse — Systems Engineer, Full Stack Developer, DevOps & Cybersecurity. Building distributed, secure and scalable systems.',
+  ogDescription: 'Adama Niasse — Systems Engineer, Full Stack Developer, DevOps & Cybersecurity.',
+  ogImage: '/images/thumbnail.png',
 })
 
 definePageMeta({ layout: 'page' })
@@ -22,8 +22,11 @@ definePageMeta({ layout: 'page' })
     <section id="hero" class="background-grid w-full flex justify-center pt-20">
       <LayoutsHomeHero />
     </section>
-    <section id="quote" class="flex w-full justify-center">
+    <section id="capabilities" class="flex w-full justify-center">
       <LayoutsHomeQuote />
+    </section>
+    <section id="architecture" class="w-full">
+      <LayoutsHomeSystemDesign />
     </section>
     <section id="project" class="flex w-full justify-center">
       <LayoutsHomeProject />
