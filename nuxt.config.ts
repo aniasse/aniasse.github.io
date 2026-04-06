@@ -27,14 +27,7 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxtjs/sitemap',
     '@nuxt/image',
-    'nuxt-security',
   ],
-
-  security: {
-    headers: {
-      contentSecurityPolicy: false,
-    },
-  },
 
   nitro: {
     preset: 'github-pages',
