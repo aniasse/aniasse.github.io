@@ -3,7 +3,7 @@ definePageMeta({ layout: false })
 
 useHead({
   title: 'CV — Adama Niasse',
-  meta: [{ name: 'description', content: 'CV de Adama Niasse — Software Engineer, DevOps, Cybersecurity' }],
+  meta: [{ name: 'description', content: 'CV de Adama Niasse — Software Engineer, Cloud-DevOps, Cybersecurity' }],
 })
 
 const handlePrint = () => window.print()
@@ -36,7 +36,7 @@ const handlePrint = () => window.print()
       <header class="cv-header">
         <div class="cv-header-left">
           <h1 class="cv-name">Adama Niasse</h1>
-          <p class="cv-title">Software Engineer · DevOps · Cybersecurity</p>
+          <p class="cv-title">Software Engineer · Cloud-DevOps · Cybersecurity</p>
           <p class="cv-location">Pikine, Dakar, Sénégal</p>
         </div>
         <div class="cv-header-right">
