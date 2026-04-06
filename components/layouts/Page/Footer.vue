@@ -1,90 +1,108 @@
+<script setup lang="ts">
+const currentYear = new Date().getFullYear()
+
+const navLinks = [
+  { label: 'Projets', to: '/projects' },
+  { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact' },
+]
+
+const stack = ['Nuxt 3', 'Tailwind CSS', 'Vercel']
+</script>
+
 <template>
-  <footer class="w-full background-grid--fade-top background-grid pb-12 mt-20 pt-20">
-    <div class="flex w-full px-14 justify-between flex-wrap">
-      <!-- left -->
-      <div class="text-sm max-w-[300px]">
-        <p class="font-bold text-slate-600">About me</p>
-        <p class="text-slate-700 mt-3">
-          I'm Adama Niasse, a <strong>full stack developer</strong> from Senegal. I have growing 
-          experience in system administration, cloud infrastructure, CI/CD pipelines, 
-          and implementing security measures for web applications and systems.
-        </p>
-        <div class="flex mt-5 gap-5">
-          <NuxtLink to="https://github.com/aniasse" target="_blank">
-            <Icon name="uil:github" size="24" color="black" />
-          </NuxtLink>
-          <NuxtLink to="https://github.com/aniasse" target="_blank">
-            <Icon name="pajamas:linkedin" size="22" color="black" />
-          </NuxtLink>
-        </div>
-      </div>
-      <!-- right -->
-      <div class="flex gap-20">
-        <div class="text-sm">
-          <p class="font-bold text-slate-500">Discovery</p>
-          <div class="flex flex-col mt-4 gap-5">
+  <footer class="w-full bg-slate-950 text-slate-400 mt-20">
+    <!-- Top section -->
+    <div class="content-wrapper w-full py-16">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+
+        <!-- Brand column -->
+        <div class="md:col-span-5">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="bg-orange-500 w-7 h-7 text-white rounded-lg text-center text-sm font-bold leading-7">/</div>
+            <span class="font-bold text-xl text-white">Adama<span class="text-orange-500">.</span></span>
+          </div>
+          <p class="text-sm leading-relaxed max-w-sm text-slate-400">
+            Systems Engineer basé au Sénégal. Spécialisé en Go, Rust, DevOps, Cloud et Sécurité.
+            Passionné par les systèmes distribués et les architectures performantes.
+          </p>
+          <!-- Social -->
+          <div class="flex items-center gap-3 mt-6">
             <NuxtLink
-              to="/projects"
-              class="flex items-center gap-2 text-sm font-bold text-slate-600"
+              to="https://github.com/aniasse"
+              target="_blank"
+              class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-orange-500 flex items-center justify-center transition-colors group"
             >
-              <span>Projects</span>
+              <Icon name="uil:github" size="18" class="text-slate-400 group-hover:text-white transition-colors" />
             </NuxtLink>
             <NuxtLink
-              to="/blog/test"
-              class="flex items-center gap-2 text-sm font-bold text-slate-600"
+              to="https://www.linkedin.com/in/adama-niasse-82878b211"
+              target="_blank"
+              class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-blue-600 flex items-center justify-center transition-colors group"
             >
-              <span>Blog</span>
-            </NuxtLink>
-            <NuxtLink
-              to="/contact"
-              class="flex items-center gap-2 text-sm font-bold text-slate-600"
-            >
-              <span>Contact</span>
+              <Icon name="pajamas:linkedin" size="15" class="text-slate-400 group-hover:text-white transition-colors" />
             </NuxtLink>
           </div>
         </div>
-        <!-- <div class="text-sm">
-          <p class="font-bold text-slate-500">This site</p>
-          <div class="flex flex-col mt-4 gap-5">
-            <NuxtLink
-              to="/projects"
-              class="flex items-center gap-2 text-sm font-bold text-slate-600"
-            >
-              <span>Source code</span>
-            </NuxtLink>
-            <NuxtLink
-              to="/blog/test"
-              class="flex items-center gap-2 text-sm font-bold text-slate-600"
-            >
-              <span>My github</span>
-            </NuxtLink>
-            <NuxtLink
-              to="/contact"
-              class="flex items-center gap-2 text-sm font-bold text-slate-600"
-            >
-              <span>Design credit</span>
-              <Icon name="material-symbols-light:open-in-new" size="16" color="black" />
-            </NuxtLink>
+
+        <!-- Navigation -->
+        <div class="md:col-span-3">
+          <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Navigation</p>
+          <ul class="flex flex-col gap-2.5">
+            <li v-for="link in navLinks" :key="link.to">
+              <NuxtLink
+                :to="link.to"
+                class="text-sm text-slate-400 hover:text-orange-400 transition-colors inline-flex items-center gap-1.5 group"
+              >
+                <span class="w-1 h-1 rounded-full bg-slate-700 group-hover:bg-orange-400 transition-colors" />
+                {{ link.label }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Stack -->
+        <div class="md:col-span-2">
+          <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Stack</p>
+          <ul class="flex flex-col gap-2.5">
+            <li v-for="tech in stack" :key="tech" class="text-sm text-slate-500 flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-slate-700" />
+              {{ tech }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Status -->
+        <div class="md:col-span-2">
+          <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Status</p>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span class="text-sm text-emerald-400 font-medium">Disponible</span>
           </div>
-        </div> -->
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Ouvert aux missions freelance et collaborations.
+          </p>
+          <NuxtLink
+            to="/contact"
+            class="inline-flex items-center gap-1.5 mt-3 text-xs font-semibold text-orange-400 hover:text-orange-300 transition-colors"
+          >
+            Me contacter
+            <Icon name="material-symbols:arrow-outward" size="12" />
+          </NuxtLink>
+        </div>
       </div>
     </div>
-    <div class="w-full flex justify-between px-14">
-      <!-- copyright -->
-      <div class="text-xs font-bold text-slate-500 mt-10">
-        <span>© 2025 aniasse</span>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-slate-800">
+      <div class="content-wrapper w-full py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-xs text-slate-600">
+          &copy; {{ currentYear }} Adama Niasse. Tous droits réservés.
+        </p>
+        <p class="text-xs text-slate-700 font-mono">
+          Dakar, Sénégal
+        </p>
       </div>
-      <!-- theme -->
-      <!-- <NuxtLink
-        to="https://github.com/huynamboz/huynamboz.github.io"
-        class="flex items-center gap-2 text-xs font-light text-slate-600 mt-10"
-        >See recent update on github
-        <img src="https://komarev.com/ghpvc/?username=huynamboz" alt="" />
-      </NuxtLink> -->
     </div>
   </footer>
 </template>
-
-<script setup></script>
-
-<style lang="scss" scoped></style>

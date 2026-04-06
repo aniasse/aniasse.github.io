@@ -10,7 +10,7 @@
         }"
         class="opacity-0 mb-10"
       >
-        <p class="font-mono text-xs uppercase tracking-widest text-slate-500">System Architecture</p>
+        <p class="font-mono text-xs uppercase tracking-widest text-slate-500">Architecture système</p>
         <h2 class="text-2xl font-bold text-white mt-1">
           Comment je conçois les systèmes
         </h2>
@@ -102,25 +102,25 @@ const principles = [
   {
     icon: 'material-symbols:layers',
     color: 'bg-orange-600',
-    title: 'Separation of Concerns',
+    title: 'Séparation des responsabilités',
     desc: 'Chaque service a une responsabilité unique. API Gateway, business logic et data layer sont strictement découplés.',
   },
   {
     icon: 'material-symbols:safety-check',
     color: 'bg-green-600',
-    title: 'Fault Tolerance',
+    title: 'Tolérance aux pannes',
     desc: 'Circuit breakers, retries exponentiels et graceful degradation pour des systèmes qui restent debout sous pression.',
   },
   {
     icon: 'material-symbols:lock',
     color: 'bg-blue-600',
-    title: 'Security by Design',
+    title: 'Sécurité dès la conception',
     desc: 'Authentification, autorisation et chiffrement intégrés dès la conception — pas ajoutés en fin de développement.',
   },
   {
     icon: 'material-symbols:trending-up',
     color: 'bg-purple-600',
-    title: 'Horizontal Scalability',
+    title: 'Scalabilité horizontale',
     desc: 'Stateless services, message queues et cache distribué pour scaler sans refactoring majeur.',
   },
 ]

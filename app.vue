@@ -2,7 +2,9 @@
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  <AtomScrollToTop />
 </template>
+
 <style>
 .page-enter-active,
 .page-leave-active {
