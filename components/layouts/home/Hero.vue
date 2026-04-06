@@ -46,7 +46,7 @@ const devOpsStack = [
           class="opacity-0 text-base text-slate-500 md:text-lg"
         >
           <span class="font-bold text-slate-700">Systems Engineer</span>
-          &nbsp;·&nbsp; DevOps &nbsp;·&nbsp; Cybersecurity
+          &nbsp;·&nbsp; Cloud-DevOps &nbsp;·&nbsp; Cybersecurity
           <span class="block mt-1 text-sm font-normal">
             Je conçois des systèmes distribués, sécurisés et performants.
           </span>
