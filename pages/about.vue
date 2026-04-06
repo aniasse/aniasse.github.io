@@ -3,7 +3,7 @@ definePageMeta({ layout: 'page' })
 
 useHead({
   title: 'About — Adama Niasse',
-  meta: [{ name: 'description', content: 'Adama Niasse — Systems Engineer, Go/Rust/Cloud-DevOps/Cybersecurity basé à Dakar, Sénégal.' }],
+  meta: [{ name: 'description', content: 'Adama Niasse — Software Engineer, Go/Rust/Cloud-DevOps/Cybersecurity basé à Dakar, Sénégal.' }],
 })
 
 const skills = [

@@ -3,7 +3,7 @@ definePageMeta({ layout: 'page' })
 
 useHead({
   title: 'Contact — Adama Niasse',
-  meta: [{ name: 'description', content: 'Contactez Adama Niasse — Systems Engineer, Go/Rust/DevOps' }],
+  meta: [{ name: 'description', content: 'Contactez Adama Niasse — Software Engineer, Go/Rust/Cloud-DevOps' }],
 })
 
 const form = reactive({

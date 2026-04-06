@@ -23,7 +23,7 @@ const stack = ['Nuxt 3', 'Tailwind CSS', 'Vercel']
             <span class="font-bold text-xl text-white">Adama<span class="text-orange-500">.</span></span>
           </div>
           <p class="text-sm leading-relaxed max-w-sm text-slate-400">
-            Systems Engineer basé au Sénégal. Spécialisé en Go, Rust, DevOps, Cloud et Sécurité.
+            Software Engineer basé au Sénégal. Spécialisé en Go, Rust, Cloud-DevOps et Cybersécurité.
             Passionné par les systèmes distribués et les architectures performantes.
           </p>
           <!-- Social -->
