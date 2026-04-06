@@ -2,7 +2,7 @@
 useHead({
   htmlAttrs: { lang: 'fr' },
   title: 'Adama Niasse — Systems Engineer',
-  meta: [{ name: 'description', content: 'Adama Niasse — Systems Engineer, Full Stack Developer, DevOps & Cybersecurity. Building distributed, secure and scalable systems.' }],
+  meta: [{ name: 'description', content: 'Adama Niasse — Systems Engineer, Go/Rust/DevOps/Cybersecurity. Conception de systèmes distribués, sécurisés et performants.' }],
 })
 
 useSeoMeta({
@@ -10,13 +10,14 @@ useSeoMeta({
   author: 'Adama Niasse',
   title: 'Adama Niasse — Systems Engineer',
   ogTitle: 'Adama Niasse — Systems Engineer',
-  description: 'Adama Niasse — Systems Engineer, Full Stack Developer, DevOps & Cybersecurity. Building distributed, secure and scalable systems.',
-  ogDescription: 'Adama Niasse — Systems Engineer, Full Stack Developer, DevOps & Cybersecurity.',
+  description: 'Adama Niasse — Systems Engineer, Go/Rust/DevOps/Cybersecurity. Conception de systèmes distribués, sécurisés et performants.',
+  ogDescription: 'Systems Engineer spécialisé en Go, Rust, DevOps et Cybersecurity. 70+ projets open source et SaaS.',
   ogImage: '/images/thumbnail.png',
 })
 
 definePageMeta({ layout: 'page' })
 </script>
+
 <template>
   <div class="flex flex-col w-full items-center pb-20 z-0 bg-white">
     <section id="hero" class="background-grid w-full flex justify-center pt-20">
@@ -28,10 +29,14 @@ definePageMeta({ layout: 'page' })
     <section id="architecture" class="w-full">
       <LayoutsHomeSystemDesign />
     </section>
+    <section id="timeline" class="flex w-full justify-center">
+      <LayoutsHomeTimeline />
+    </section>
     <section id="project" class="flex w-full justify-center">
       <LayoutsHomeProject />
     </section>
+    <section id="cta" class="flex w-full justify-center">
+      <LayoutsHomeCta />
+    </section>
   </div>
 </template>
-
-<style lang="scss" scoped></style>

@@ -1,11 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // server: {
-  //   host: '0.0.0.0', // Écoute sur toutes les interfaces réseau
-  //   port: 3000        // Port sur lequel le serveur écoutera
-  // },
+  ssr: true,
+
   app: {
-    buildAssetsDir: '_assets', // don't use "_" at the begining of the folder name to avoids nojkill conflict
+    buildAssetsDir: '_assets',
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
@@ -18,7 +16,7 @@ export default defineNuxtConfig({
   ],
 
   site: {
-    url: 'https://adama.nuxt.dev',
+    url: 'https://aniasse.github.io',
   },
 
   devtools: { enabled: true },
@@ -31,37 +29,19 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-security',
   ],
+
   security: {
     headers: {
       contentSecurityPolicy: false,
     },
   },
+
   nitro: {
-    vercel: {
-      functions: {
-        maxDuration: 30,
-      },
-    },
-    routeRules: {
-      '/api/ai/**': (() => {
-        if (process.env.PROXY_ENABLED) {
-          return {
-            proxy: 'https://quizzfly-ai.vercel.app/api/ai/**',
-            cors: true,
-          }
-        }
-        return {
-          cors: true,
-        }
-      })(),
-    },
+    preset: 'github-pages',
     prerender: {
       failOnError: false,
       crawlLinks: true,
-      routes: [
-        '/_ipx/f_webp/images/docs/ecommerce-v2/thumb.png',
-        '/_ipx/f_webp/images/docs/portfolio/preview.png',
-      ],
+      routes: ['/'],
     },
   },
 
