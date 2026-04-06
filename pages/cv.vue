@@ -37,27 +37,28 @@ const handlePrint = () => window.print()
         <div class="cv-header-left">
           <h1 class="cv-name">Adama Niasse</h1>
           <p class="cv-title">Software Engineer · DevOps · Cybersecurity</p>
+          <p class="cv-location">Pikine, Dakar, Sénégal</p>
         </div>
         <div class="cv-header-right">
           <div class="cv-contact-item">
-            <span class="cv-contact-icon">✉</span>
-            adamaniasse153@gmail.com
+            <span class="cv-contact-label">Email :</span>
+            <a href="mailto:adamaniasse153@gmail.com">adamaniasse153@gmail.com</a>
           </div>
           <div class="cv-contact-item">
-            <span class="cv-contact-icon">⌘</span>
-            linkedin.com/in/adama-niasse-82878b211
+            <span class="cv-contact-label">Tél :</span>
+            <a href="tel:+221773248663">+221 77 324 86 63</a>
           </div>
           <div class="cv-contact-item">
-            <span class="cv-contact-icon">⟐</span>
-            github.com/aniasse
+            <span class="cv-contact-label">LinkedIn :</span>
+            <a href="https://www.linkedin.com/in/adama-niasse-82878b211" target="_blank">linkedin.com/in/adama-niasse-82878b211</a>
           </div>
           <div class="cv-contact-item">
-            <span class="cv-contact-icon">☎</span>
-            +221 77 324 86 63
+            <span class="cv-contact-label">GitHub :</span>
+            <a href="https://github.com/aniasse" target="_blank">github.com/aniasse</a>
           </div>
           <div class="cv-contact-item">
-            <span class="cv-contact-icon">◉</span>
-            Pikine, Dakar, Sénégal · 25 ans
+            <span class="cv-contact-label">Portfolio :</span>
+            <a href="https://aniasse.github.io" target="_blank">aniasse.github.io</a>
           </div>
         </div>
       </header>
@@ -173,41 +174,15 @@ const handlePrint = () => window.print()
       <section class="cv-section">
         <h2 class="cv-section-title">Projets Clés</h2>
 
-        <div class="cv-projects-grid">
-          <div class="cv-project">
-            <h4 class="cv-project-title">Souhibou Télécom <span class="cv-project-tag">E-commerce · Privé</span></h4>
-            <p class="cv-project-desc">Écosystème e-commerce high-tech — Plateforme + Dashboard CRM + App mobile, API Go, CinetPay</p>
-          </div>
-          <div class="cv-project">
-            <h4 class="cv-project-title">Jamah Pikine <span class="cv-project-tag">Écosystème · Privé</span></h4>
-            <p class="cv-project-desc">Plateforme + Dashboard admin + Apps mobiles — streaming/téléchargement Zikr, Supabase, S3</p>
-          </div>
-          <div class="cv-project">
-            <h4 class="cv-project-title">Secure-Shield <span class="cv-project-tag">Sécurité · Open Source</span></h4>
-            <p class="cv-project-desc">Plateforme SOC avec agent IA pour détection et réponse aux incidents en temps réel (TypeScript)</p>
-          </div>
-          <div class="cv-project">
-            <h4 class="cv-project-title">Cloud-Design <span class="cv-project-tag">DevOps · Open Source</span></h4>
-            <p class="cv-project-desc">Infrastructure microservices AWS avec Terraform, ECS, auto-scaling et monitoring CloudWatch</p>
-          </div>
-          <div class="cv-project">
-            <h4 class="cv-project-title">Multiplayer FPS <span class="cv-project-tag">Rust · Open Source</span></h4>
-            <p class="cv-project-desc">Jeu FPS multijoueur avec Bevy Engine, prédiction client, réconciliation serveur, protocole UDP</p>
-          </div>
-          <div class="cv-project">
-            <h4 class="cv-project-title">Vortex Agency <span class="cv-project-tag">Web · Privé</span></h4>
-            <p class="cv-project-desc">Site vitrine agence digitale — Nuxt, Three.js, Spline, GSAP, animations 3D</p>
-          </div>
-          <div class="cv-project">
-            <h4 class="cv-project-title">Real-Time Forum <span class="cv-project-tag">Go · Open Source</span></h4>
-            <p class="cv-project-desc">Forum avec messagerie instantanée WebSocket, authentification JWT, SPA vanilla JS</p>
-          </div>
-          <div class="cv-project">
-            <h4 class="cv-project-title">0-Shell <span class="cv-project-tag">Go · Open Source</span></h4>
-            <p class="cv-project-desc">Shell Unix complet — syscalls fork/exec, signaux, pipes, redirections I/O, builtins</p>
-          </div>
-        </div>
-        <p class="cv-projects-footer">+ 60 autres projets sur github.com/aniasse</p>
+        <ul class="cv-list">
+          <li><strong>Souhibou Télécom</strong> (Freelance) — Écosystème e-commerce high-tech : plateforme Next.js, dashboard CRM admin, app mobile, API Go, paiement CinetPay</li>
+          <li><strong>Jamah Pikine</strong> (Freelance) — Écosystème communautaire : plateforme web + dashboard admin + apps mobiles (React Native, Capacitor), streaming audio, Supabase, AWS S3</li>
+          <li><strong>Secure-Shield</strong> (Open Source) — Plateforme SOC avec agent IA pour détection d'incidents en temps réel (TypeScript)</li>
+          <li><strong>Cloud-Design</strong> (Open Source) — Infrastructure microservices AWS avec Terraform, ECS, auto-scaling, monitoring CloudWatch</li>
+          <li><strong>Multiplayer FPS</strong> (Open Source) — Jeu FPS multijoueur en Rust avec Bevy Engine, netcode UDP, prédiction client</li>
+          <li><strong>0-Shell</strong> (Open Source) — Shell Unix complet en Go : syscalls fork/exec, signaux, pipes, redirections I/O</li>
+        </ul>
+        <p class="cv-projects-footer">+ 60 autres projets sur <a href="https://github.com/aniasse">github.com/aniasse</a></p>
       </section>
 
       <div class="cv-divider" />
@@ -302,7 +277,7 @@ const handlePrint = () => window.print()
 
       <!-- Footer -->
       <div class="cv-footer">
-        <span>Adama Niasse — adamaniasse153@gmail.com — github.com/aniasse</span>
+        <span>Adama Niasse — <a href="mailto:adamaniasse153@gmail.com">adamaniasse153@gmail.com</a> — <a href="https://github.com/aniasse">github.com/aniasse</a> — <a href="https://aniasse.github.io">aniasse.github.io</a></span>
       </div>
     </div>
   </div>
@@ -367,9 +342,28 @@ const handlePrint = () => window.print()
   justify-content: flex-end;
   gap: 6px;
 }
-.cv-contact-icon {
-  font-size: 9px;
-  color: #94a3b8;
+.cv-location {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 2px;
+}
+.cv-contact-label {
+  font-weight: 600;
+  color: #64748b;
+  min-width: 55px;
+}
+.cv-header-right a {
+  color: #475569;
+  text-decoration: none;
+}
+.cv-header-right a:hover {
+  text-decoration: underline;
+}
+@media print {
+  .cv-header-right a {
+    color: #475569;
+    text-decoration: none;
+  }
 }
 
 /* Dividers */
@@ -478,38 +472,19 @@ const handlePrint = () => window.print()
 }
 
 /* Projects */
-.cv-projects-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-.cv-project {
-  padding: 6px 8px;
-  border: 1px solid #f1f5f9;
-  border-radius: 4px;
-}
-.cv-project-title {
-  font-size: 10.5px;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 0;
-}
-.cv-project-tag {
-  font-weight: 500;
-  font-size: 9px;
-  color: #94a3b8;
-}
-.cv-project-desc {
-  font-size: 9.5px;
-  color: #64748b;
-  margin: 2px 0 0 0;
-  line-height: 1.5;
-}
 .cv-projects-footer {
   font-size: 10px;
   color: #94a3b8;
   margin-top: 8px;
   font-style: italic;
+}
+.cv-projects-footer a {
+  color: #94a3b8;
+  text-decoration: none;
+}
+.cv-footer a {
+  color: #94a3b8;
+  text-decoration: none;
 }
 
 /* Certifications */
@@ -591,9 +566,6 @@ const handlePrint = () => window.print()
   .cv-entry-header {
     flex-direction: column;
     gap: 2px;
-  }
-  .cv-projects-grid {
-    grid-template-columns: 1fr;
   }
   .cv-container {
     padding: 24px 20px;
