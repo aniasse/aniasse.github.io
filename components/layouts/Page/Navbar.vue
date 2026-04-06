@@ -41,23 +41,23 @@ const showSettings = ref<boolean>(false)
       <!-- logo -->
       <NuxtLink to="/" class="flex gap-2 items-center">
         <div class="bg-accent-600 w-6 h-6 text-white rounded-lg text-center text-sm">/</div>
-        <span class="font-bold text-xl">Lamya<span class="text-accent-600">kun</span></span>
+        <span class="font-bold text-xl">Adama<span class="text-accent-600">.</span></span>
       </NuxtLink>
       <!-- menu -->
-      <!-- <div class="max-md:hidden lg:flex mt-1 ml-5 gap-5">
-        <NuxtLink to="/projects" class="flex items-center gap-2 text-sm font-bold text-accent-600">
-          <span>Projects</span>
+      <div class="max-md:hidden lg:flex mt-1 ml-8 gap-6">
+        <NuxtLink to="/projects" class="text-sm font-semibold text-slate-600 hover:text-accent-600 transition-colors">
+          Projects
         </NuxtLink>
-        <NuxtLink to="/blog" class="flex items-center gap-2 text-sm font-bold text-accent-600">
-          <span>Blog</span>
+        <NuxtLink to="/about" class="text-sm font-semibold text-slate-600 hover:text-accent-600 transition-colors">
+          About
         </NuxtLink>
-        <NuxtLink to="/contact" class="flex items-center gap-2 text-sm font-bold text-accent-600">
-          <span>Contact</span>
+        <NuxtLink to="/contact" class="text-sm font-semibold text-slate-600 hover:text-accent-600 transition-colors">
+          Contact
         </NuxtLink>
-      </div> -->
+      </div>
     </div>
     <div class="flex items-center gap-4">
-      <NuxtLink to="https://github.com/aniasse" target="_blank">
+      <NuxtLink to="https://www.linkedin.com/in/adama-niasse-82878b211" target="_blank">
         <Icon name="pajamas:linkedin" size="22" color="black" />
       </NuxtLink>
       <NuxtLink to="https://github.com/aniasse" target="_blank">

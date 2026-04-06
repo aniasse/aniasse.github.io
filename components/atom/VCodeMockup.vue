@@ -41,11 +41,24 @@ defineProps(['project'])
         <div class="w-5 h-5 rounded-md bg-slate-200"></div>
         <span class="text-sm text-slate-600">MIT license</span>
       </div>
-      <div class="flex mt-3">
-        <div class="w-5 h-5 rounded-md bg-slate-200"></div>
-        <div class="ml-2 w-10 h-5 rounded-md bg-slate-200"></div>
-        <div class="ml-4 w-5 h-5 rounded-md bg-slate-200"></div>
-        <div class="ml-2 w-10 h-5 rounded-md bg-slate-200"></div>
+      <div class="flex mt-3 gap-2 flex-wrap">
+        <span
+          v-for="tag in project.tags"
+          :key="tag"
+          class="text-xs px-2 py-0.5 rounded-full bg-accent-100 text-accent-700 font-medium"
+        >
+          {{ tag }}
+        </span>
+      </div>
+      <div class="mt-3">
+        <NuxtLink
+          :to="project.github"
+          target="_blank"
+          class="inline-flex items-center gap-1 text-xs text-blue-600 hover:underline"
+        >
+          <Icon name="ri:github-fill" size="14" />
+          Voir sur GitHub
+        </NuxtLink>
       </div>
       <!-- readme -->
     </div>
@@ -58,7 +71,7 @@ defineProps(['project'])
           </p>
         </div>
         <div class="mt-5 p-2">
-          <NuxtImg format="webp" :src="`/images/docs/${project.img}`" alt="" />
+          <NuxtImg format="webp" :src="`/images/${project.img}`" alt="" class="w-full rounded" />
         </div>
       </div>
     </div>
