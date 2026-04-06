@@ -1,17 +1,17 @@
 <script setup>
 useHead({
   htmlAttrs: { lang: 'fr' },
-  title: 'Adama Niasse — Systems Engineer',
-  meta: [{ name: 'description', content: 'Adama Niasse — Systems Engineer, Go/Rust/Cloud-DevOps/Cybersecurity. Conception de systèmes distribués, sécurisés et performants.' }],
+  title: 'Adama Niasse — Software Engineer',
+  meta: [{ name: 'description', content: 'Adama Niasse — Software Engineer, Go/Rust/Cloud-DevOps/Cybersecurity. Conception de systèmes distribués, sécurisés et performants.' }],
 })
 
 useSeoMeta({
   charset: 'utf-8',
   author: 'Adama Niasse',
-  title: 'Adama Niasse — Systems Engineer',
-  ogTitle: 'Adama Niasse — Systems Engineer',
-  description: 'Adama Niasse — Systems Engineer, Go/Rust/Cloud-DevOps/Cybersecurity. Conception de systèmes distribués, sécurisés et performants.',
-  ogDescription: 'Systems Engineer spécialisé en Go, Rust, Cloud-DevOps et Cybersecurity. 70+ projets open source et SaaS.',
+  title: 'Adama Niasse — Software Engineer',
+  ogTitle: 'Adama Niasse — Software Engineer',
+  description: 'Adama Niasse — Software Engineer, Go/Rust/Cloud-DevOps/Cybersecurity. Conception de systèmes distribués, sécurisés et performants.',
+  ogDescription: 'Software Engineer spécialisé en Go, Rust, Cloud-DevOps et Cybersecurity. 70+ projets open source et SaaS.',
   ogImage: '/images/thumbnail.png',
 })
 

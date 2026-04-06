@@ -45,7 +45,7 @@ const devOpsStack = [
           v-motion="{ initial: { opacity: 0, x: -80 }, enter: { opacity: 1, x: 0 }, delay: 160 }"
           class="opacity-0 text-base text-slate-500 md:text-lg"
         >
-          <span class="font-bold text-slate-700">Systems Engineer</span>
+          <span class="font-bold text-slate-700">Software Engineer</span>
           &nbsp;·&nbsp; Cloud-DevOps &nbsp;·&nbsp; Cybersecurity
           <span class="block mt-1 text-sm font-normal">
             Je conçois des systèmes distribués, sécurisés et performants.
