@@ -3,6 +3,7 @@ const currentYear = new Date().getFullYear()
 
 const navLinks = [
   { label: 'Projets', to: '/projects' },
+  { label: 'Blog', to: '/blog' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
 ]
