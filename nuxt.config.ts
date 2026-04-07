@@ -8,12 +8,7 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
-  plugins: [
-    {
-      src: '~/plugins/vue-highlight-code',
-      mode: 'client',
-    },
-  ],
+  // Plugins are auto-detected: .client.ts suffix = client-only
 
   site: {
     url: 'https://aniasse.github.io',
