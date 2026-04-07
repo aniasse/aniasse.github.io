@@ -5,6 +5,7 @@ const mobileOpen = ref(false)
 
 const links = [
   { to: '/projects', label: 'Projets' },
+  { to: '/blog', label: 'Blog' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ]
