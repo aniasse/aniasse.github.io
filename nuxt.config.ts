@@ -5,7 +5,6 @@ export default defineNuxtConfig({
   app: {
     buildAssetsDir: '_assets',
     pageTransition: { name: 'page', mode: 'out-in' },
-    layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
   // Plugins are auto-detected: .client.ts suffix = client-only
