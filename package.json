@@ -1,5 +1,5 @@
 {
-  "name": "huynamboz-dev",
+  "name": "adama-niasse-portfolio",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,45 +8,24 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "tailwindcss-accent": "^2.1.2",
-    "lint": "eslint . --ext .ts,.vue",
     "deploy": "gh-pages -d .output/public"
   },
   "devDependencies": {
-    "@nuxtjs/supabase": "^1.2.2",
     "@nuxtjs/tailwindcss": "^6.10.3",
     "nuxt-icon": "^0.6.8",
-    "sass": "^1.77.6",
     "tailwindcss-accent": "^2.1.2",
     "vue": "^3.4.5",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.21.0",
     "@highlightjs/vue-plugin": "^2.1.2",
-    "@nuxt/content": "^3.4.0",
     "@nuxt/image": "^1.5.0",
-    "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/sitemap": "^5.1.4",
     "@vueuse/motion": "^2.1.0",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-nuxt": "^4.0.0",
-    "eslint-plugin-prettier": "^5.1.2",
     "gh-pages": "^6.1.1",
-    "github-markdown-css": "^5.5.1",
     "highlight.js": "^11.9.0",
     "nuxt": "^3.16.2",
-    "nuxt-security": "^2.1.2",
-    "openai": "^4.73.0",
-    "postcss": "^8.4.33",
-    "postcss-import": "^16.0.0",
-    "prettier": "^3.1.1",
-    "typescript": "^5.3.3",
-    "vue-drag-scroller": "^1.5.2",
-    "vue3-toastify": "^0.2.8",
-    "zod": "^3.23.8"
+    "vue3-toastify": "^0.2.8"
   },
   "packageManager": "pnpm@9.12.2+sha512.22721b3a11f81661ae1ec68ce1a7b879425a1ca5b991c975b074ac220b187ce56c708fe5db69f4c962c989452eee76c82877f4ee80f474cebd61ee13461b6228"
 }

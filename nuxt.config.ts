@@ -40,7 +40,6 @@ export default defineNuxtConfig({
     '~/assets/css/tailwind.css',
     '~/assets/css/global.css',
     '~/assets/css/component.css',
-    'highlight.js/styles/stackoverflow-light.css',
   ],
 
   alias: {
