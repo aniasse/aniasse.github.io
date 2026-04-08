@@ -4,7 +4,7 @@ export default defineNuxtConfig({
 
   app: {
     buildAssetsDir: '_assets',
-    pageTransition: { name: 'page', mode: 'out-in' },
+    // pageTransition disabled - was causing blank pages on SPA navigation
   },
 
   // Plugins are auto-detected: .client.ts suffix = client-only
