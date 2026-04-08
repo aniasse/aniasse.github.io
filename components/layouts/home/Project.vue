@@ -37,7 +37,7 @@ const categoryStats = [
             initial: { opacity: 0, y: 20 },
             visibleOnce: { opacity: 1, y: 0 },
           }"
-          class="opacity-0"
+         
         >
           <p class="font-mono text-xs uppercase tracking-widest text-slate-400">Portfolio</p>
           <h2 class="text-3xl font-[900] text-slate-800 mt-1">Projets récents</h2>
@@ -52,7 +52,7 @@ const categoryStats = [
             visibleOnce: { opacity: 1, x: 0 },
             delay: 100,
           }"
-          class="opacity-0 max-md:hidden inline-flex items-center gap-2 text-sm font-semibold border border-slate-200 hover:border-orange-400 hover:text-orange-600 px-4 py-2.5 rounded-xl transition-all group"
+          class="max-md:hidden inline-flex items-center gap-2 text-sm font-semibold border border-slate-200 hover:border-orange-400 hover:text-orange-600 px-4 py-2.5 rounded-xl transition-all group"
         >
           Voir les {{ ALL_PROJECTS.length }} projets
           <Icon name="material-symbols:arrow-outward" size="15" class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -67,7 +67,7 @@ const categoryStats = [
           visibleOnce: { opacity: 1, y: 0 },
           delay: 60,
         }"
-        class="opacity-0 group block w-full mb-5 rounded-2xl border border-slate-800 bg-slate-950 p-7 hover:border-orange-500 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/5"
+        class="group block w-full mb-5 rounded-2xl border border-slate-800 bg-slate-950 p-7 hover:border-orange-500 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/5"
       >
         <div class="flex items-start justify-between gap-6 flex-wrap">
           <div class="flex-1 min-w-0">
@@ -149,7 +149,7 @@ const categoryStats = [
           :initial="{ opacity: 0, y: 24 }"
           :visibleOnce="{ opacity: 1, y: 0 }"
           :delay="80 + 60 * idx"
-          class="opacity-0 group flex flex-col border border-slate-200 rounded-2xl bg-white overflow-hidden hover:border-orange-300 hover:shadow-lg hover:shadow-orange-500/5 transition-all duration-200"
+          class="group flex flex-col border border-slate-200 rounded-2xl bg-white overflow-hidden hover:border-orange-300 hover:shadow-lg hover:shadow-orange-500/5 transition-all duration-200"
         >
           <AtomProjectIllustration :category="project.category" size="sm" />
           <div class="p-4 flex flex-col flex-1">
@@ -198,7 +198,7 @@ const categoryStats = [
           visibleOnce: { opacity: 1, y: 0 },
           delay: 200,
         }"
-        class="opacity-0 border border-slate-100 rounded-2xl bg-slate-50 px-6 py-4 flex flex-wrap items-center gap-6 mb-8"
+        class="border border-slate-100 rounded-2xl bg-slate-50 px-6 py-4 flex flex-wrap items-center gap-6 mb-8"
       >
         <p class="text-xs text-slate-400 font-mono mr-2 flex-shrink-0">{{ ALL_PROJECTS.length }} projets ·</p>
         <div

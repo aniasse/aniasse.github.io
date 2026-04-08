@@ -95,19 +95,19 @@ const contacts = [
       <div class="content-wrapper w-full">
         <div
           v-motion="{ initial: { opacity: 0, y: -16 }, enter: { opacity: 1, y: 0 } }"
-          class="opacity-0 font-mono text-xs text-slate-400 uppercase tracking-widest mb-4"
+          class="font-mono text-xs text-slate-400 uppercase tracking-widest mb-4"
         >
           aniasse / contact
         </div>
         <h1
           v-motion="{ initial: { opacity: 0, x: -60 }, enter: { opacity: 1, x: 0 }, delay: 80 }"
-          class="opacity-0 text-4xl md:text-5xl font-[900] text-slate-800 mb-4 leading-tight"
+          class="text-4xl md:text-5xl font-[900] text-slate-800 mb-4 leading-tight"
         >
           Travaillons <span class="text-orange-500">ensemble</span>
         </h1>
         <p
           v-motion="{ initial: { opacity: 0, x: -60 }, enter: { opacity: 1, x: 0 }, delay: 160 }"
-          class="opacity-0 text-slate-500 text-base max-w-lg leading-relaxed"
+          class="text-slate-500 text-base max-w-lg leading-relaxed"
         >
           Disponible pour des missions freelance, des collaborations tech
           ou simplement discuter systèmes distribués autour d'un café.
@@ -123,7 +123,7 @@ const contacts = [
         <div class="lg:col-span-3">
           <div
             v-motion="{ initial: { opacity: 0, y: 24 }, visibleOnce: { opacity: 1, y: 0 } }"
-            class="opacity-0"
+           
           >
             <h2 class="text-lg font-bold text-slate-800 mb-6">Envoyer un message</h2>
 
@@ -235,7 +235,7 @@ const contacts = [
             <NuxtLink
               :to="contact.href"
               target="_blank"
-              class="opacity-0 flex items-center gap-4 border border-slate-200 rounded-2xl p-5 bg-white hover:border-orange-300 hover:shadow-md transition-all group"
+              class="flex items-center gap-4 border border-slate-200 rounded-2xl p-5 bg-white hover:border-orange-300 hover:shadow-md transition-all group"
               style="opacity: 1"
             >
               <div :class="[contact.color, 'w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0']">
@@ -254,7 +254,7 @@ const contacts = [
           <!-- Availability -->
           <div
             v-motion="{ initial: { opacity: 0, x: 24 }, visibleOnce: { opacity: 1, x: 0 }, delay: 200 }"
-            class="opacity-0 border border-emerald-200 rounded-2xl p-5 bg-emerald-50 mt-2"
+            class="border border-emerald-200 rounded-2xl p-5 bg-emerald-50 mt-2"
           >
             <div class="flex items-center gap-2.5 mb-2">
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -268,7 +268,7 @@ const contacts = [
           <!-- Location -->
           <div
             v-motion="{ initial: { opacity: 0, x: 24 }, visibleOnce: { opacity: 1, x: 0 }, delay: 260 }"
-            class="opacity-0 border border-slate-200 rounded-2xl p-5 bg-white"
+            class="border border-slate-200 rounded-2xl p-5 bg-white"
           >
             <div class="flex items-center gap-2.5 mb-2">
               <Icon name="material-symbols:location-on-outline" size="16" class="text-slate-400" />

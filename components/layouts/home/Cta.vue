@@ -2,7 +2,7 @@
   <div class="content-wrapper mx-auto mt-24 mb-8">
     <div
       v-motion="{ initial: { opacity: 0, y: 30 }, visibleOnce: { opacity: 1, y: 0 } }"
-      class="opacity-0 relative overflow-hidden rounded-2xl bg-slate-950 border border-slate-800 p-10 md:p-14 text-center"
+      class="relative overflow-hidden rounded-2xl bg-slate-950 border border-slate-800 p-10 md:p-14 text-center"
     >
       <!-- Subtle glow -->
       <div class="absolute inset-0 pointer-events-none">

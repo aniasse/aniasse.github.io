@@ -38,7 +38,7 @@ const relatedArticles = ALL_ARTICLES
         <!-- Category + date -->
         <div
           v-motion="{ initial: { opacity: 0, y: -10 }, enter: { opacity: 1, y: 0 } }"
-          class="opacity-0 flex items-center gap-3 mb-4"
+          class="flex items-center gap-3 mb-4"
         >
           <span class="text-xs font-bold px-2.5 py-1 rounded-lg" :class="useCategoryColor(article.category)">
             {{ article.category }}
@@ -51,7 +51,7 @@ const relatedArticles = ALL_ARTICLES
         <!-- Title -->
         <h1
           v-motion="{ initial: { opacity: 0, x: -40 }, enter: { opacity: 1, x: 0 }, delay: 80 }"
-          class="opacity-0 text-3xl md:text-4xl font-[900] text-slate-800 mb-4 leading-tight"
+          class="text-3xl md:text-4xl font-[900] text-slate-800 mb-4 leading-tight"
         >
           {{ article.title }}
         </h1>
@@ -59,7 +59,7 @@ const relatedArticles = ALL_ARTICLES
         <!-- Description -->
         <p
           v-motion="{ initial: { opacity: 0, x: -40 }, enter: { opacity: 1, x: 0 }, delay: 140 }"
-          class="opacity-0 text-slate-500 text-base leading-relaxed mb-5"
+          class="text-slate-500 text-base leading-relaxed mb-5"
         >
           {{ article.description }}
         </p>
@@ -67,7 +67,7 @@ const relatedArticles = ALL_ARTICLES
         <!-- Tags -->
         <div
           v-motion="{ initial: { opacity: 0, y: 10 }, enter: { opacity: 1, y: 0 }, delay: 200 }"
-          class="opacity-0 flex flex-wrap gap-2"
+          class="flex flex-wrap gap-2"
         >
           <span
             v-for="tag in article.tags"
@@ -91,7 +91,7 @@ const relatedArticles = ALL_ARTICLES
             :initial="{ opacity: 0, y: 24 }"
             :visibleOnce="{ opacity: 1, y: 0 }"
             :delay="60 * idx"
-            class="opacity-0"
+           
           >
             <!-- Section title -->
             <h2 class="text-xl font-bold text-slate-800 mb-3">{{ section.title }}</h2>
@@ -130,7 +130,7 @@ const relatedArticles = ALL_ARTICLES
         <!-- Author card -->
         <div
           v-motion="{ initial: { opacity: 0, y: 20 }, visibleOnce: { opacity: 1, y: 0 } }"
-          class="opacity-0 mt-14 border border-slate-200 rounded-2xl p-6 flex items-center gap-5"
+          class="mt-14 border border-slate-200 rounded-2xl p-6 flex items-center gap-5"
         >
           <NuxtImg
             format="webp"

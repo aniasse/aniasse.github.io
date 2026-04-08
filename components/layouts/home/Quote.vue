@@ -39,7 +39,7 @@ const metrics = [
     <!-- section label -->
     <div
       v-motion="{ initial: { opacity: 0, y: 20 }, visibleOnce: { opacity: 1, y: 0 } }"
-      class="opacity-0 mb-2"
+      class="mb-2"
     >
       <p class="font-mono text-xs uppercase tracking-widest text-slate-400">Expertise principale</p>
       <h2 class="text-2xl font-bold text-slate-700 mt-1">Compétences système</h2>
@@ -54,7 +54,7 @@ const metrics = [
         :initial="{ opacity: 0, y: 30 }"
         :visibleOnce="{ opacity: 1, y: 0 }"
         :delay="idx * 100"
-        class="opacity-0 bg-slate-900 text-white rounded-2xl p-6 border border-slate-700 hover:border-orange-400 transition-colors group"
+        class="bg-slate-900 text-white rounded-2xl p-6 border border-slate-700 hover:border-orange-400 transition-colors group"
       >
         <div class="w-10 h-10 rounded-xl border flex items-center justify-center mb-4" :class="cap.color">
           <Icon :name="cap.icon" size="22" :class="cap.iconColor" />
@@ -76,7 +76,7 @@ const metrics = [
     <!-- metrics bar -->
     <div
       v-motion="{ initial: { opacity: 0, y: 20 }, visibleOnce: { opacity: 1, y: 0 }, delay: 300 }"
-      class="opacity-0 mt-6 grid grid-cols-2 md:grid-cols-4 gap-4"
+      class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4"
     >
       <div
         v-for="metric in metrics"

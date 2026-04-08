@@ -38,7 +38,7 @@ const categoriesWithCount = computed(() =>
             initial: { opacity: 0, y: -16 },
             enter: { opacity: 1, y: 0 },
           }"
-          class="opacity-0 font-mono text-xs text-slate-400 uppercase tracking-widest mb-4"
+          class="font-mono text-xs text-slate-400 uppercase tracking-widest mb-4"
         >
           aniasse / projects
         </div>
@@ -48,7 +48,7 @@ const categoriesWithCount = computed(() =>
             enter: { opacity: 1, x: 0 },
             delay: 80,
           }"
-          class="opacity-0 text-4xl md:text-5xl font-[900] text-slate-800 mb-4 leading-tight"
+          class="text-4xl md:text-5xl font-[900] text-slate-800 mb-4 leading-tight"
         >
           Mes <span style="color: #FFA500">projets</span>
         </h1>
@@ -58,7 +58,7 @@ const categoriesWithCount = computed(() =>
             enter: { opacity: 1, x: 0 },
             delay: 160,
           }"
-          class="opacity-0 text-slate-500 text-base max-w-xl leading-relaxed mb-8"
+          class="text-slate-500 text-base max-w-xl leading-relaxed mb-8"
         >
           {{ ALL_PROJECTS.length }} projets open source — du shell Unix aux architectures cloud distribuées,
           en passant par les jeux réseau en Rust et les outils CLI en Go.
@@ -69,7 +69,7 @@ const categoriesWithCount = computed(() =>
             enter: { opacity: 1, y: 0 },
             delay: 240,
           }"
-          class="opacity-0 flex flex-wrap gap-3"
+          class="flex flex-wrap gap-3"
         >
           <NuxtLink
             to="https://github.com/aniasse"
@@ -143,7 +143,7 @@ const categoriesWithCount = computed(() =>
                 :initial="{ opacity: 0, y: 24 }"
                 :visibleOnce="{ opacity: 1, y: 0 }"
                 :delay="60 * idx"
-                class="opacity-0 group flex flex-col border border-slate-200 rounded-2xl bg-white overflow-hidden hover:border-orange-300 hover:shadow-md transition-all duration-200"
+                class="group flex flex-col border border-slate-200 rounded-2xl bg-white overflow-hidden hover:border-orange-300 hover:shadow-md transition-all duration-200"
               >
                 <AtomProjectIllustration :category="project.category" size="sm" />
                 <div class="p-4 flex flex-col flex-1">
@@ -192,7 +192,7 @@ const categoriesWithCount = computed(() =>
               :initial="{ opacity: 0, y: 24 }"
               :visibleOnce="{ opacity: 1, y: 0 }"
               :delay="60 * idx"
-              class="opacity-0 group flex flex-col border border-slate-200 rounded-2xl bg-white overflow-hidden hover:border-orange-300 hover:shadow-md transition-all duration-200"
+              class="group flex flex-col border border-slate-200 rounded-2xl bg-white overflow-hidden hover:border-orange-300 hover:shadow-md transition-all duration-200"
             >
               <AtomProjectIllustration :category="project.category" size="sm" />
               <div class="p-4 flex flex-col flex-1">

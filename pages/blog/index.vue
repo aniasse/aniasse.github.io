@@ -28,19 +28,19 @@ const filteredArticles = computed(() =>
       <div class="content-wrapper w-full">
         <div
           v-motion="{ initial: { opacity: 0, y: -16 }, enter: { opacity: 1, y: 0 } }"
-          class="opacity-0 font-mono text-xs text-slate-400 uppercase tracking-widest mb-4"
+          class="font-mono text-xs text-slate-400 uppercase tracking-widest mb-4"
         >
           aniasse / blog
         </div>
         <h1
           v-motion="{ initial: { opacity: 0, x: -60 }, enter: { opacity: 1, x: 0 }, delay: 80 }"
-          class="opacity-0 text-4xl md:text-5xl font-[900] text-slate-800 mb-4 leading-tight"
+          class="text-4xl md:text-5xl font-[900] text-slate-800 mb-4 leading-tight"
         >
           Blog <span class="text-orange-500">technique</span>
         </h1>
         <p
           v-motion="{ initial: { opacity: 0, x: -60 }, enter: { opacity: 1, x: 0 }, delay: 160 }"
-          class="opacity-0 text-slate-500 text-base max-w-xl leading-relaxed"
+          class="text-slate-500 text-base max-w-xl leading-relaxed"
         >
           Articles approfondis sur le System Design, la performance, le DevOps,
           la sécurité et les tendances de l'ingénierie logicielle.
@@ -96,7 +96,7 @@ const filteredArticles = computed(() =>
             :initial="{ opacity: 0, y: 24 }"
             :visibleOnce="{ opacity: 1, y: 0 }"
             :delay="60 * idx"
-            class="opacity-0 group flex flex-col sm:flex-row gap-5 border border-slate-200 rounded-2xl p-5 bg-white hover:border-orange-300 hover:shadow-md transition-all"
+            class="group flex flex-col sm:flex-row gap-5 border border-slate-200 rounded-2xl p-5 bg-white hover:border-orange-300 hover:shadow-md transition-all"
           >
             <!-- Left: icon -->
             <div class="flex-shrink-0">
