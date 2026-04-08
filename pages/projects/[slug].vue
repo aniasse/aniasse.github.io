@@ -53,7 +53,7 @@ const relatedProjects = ALL_PROJECTS
                 enter: { opacity: 1, x: 0 },
                 delay: 60,
               }"
-              class="opacity-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold mb-4"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold mb-4"
               :class="useCategoryAccent(project.category)"
             >
               <Icon :name="useCategoryIcon(project.category)" size="13" />
@@ -67,7 +67,7 @@ const relatedProjects = ALL_PROJECTS
                 enter: { opacity: 1, x: 0 },
                 delay: 100,
               }"
-              class="opacity-0 text-4xl md:text-5xl font-[900] text-slate-800 mb-4 leading-tight"
+              class="text-4xl md:text-5xl font-[900] text-slate-800 mb-4 leading-tight"
             >
               {{ project.title }}
             </h1>
@@ -79,7 +79,7 @@ const relatedProjects = ALL_PROJECTS
                 enter: { opacity: 1, x: 0 },
                 delay: 160,
               }"
-              class="opacity-0 text-slate-500 text-base max-w-2xl leading-relaxed"
+              class="text-slate-500 text-base max-w-2xl leading-relaxed"
             >
               {{ project.description }}
             </p>
@@ -92,7 +92,7 @@ const relatedProjects = ALL_PROJECTS
               enter: { opacity: 1, y: 0 },
               delay: 200,
             }"
-            class="opacity-0 flex flex-col gap-2 md:items-end md:pt-14"
+            class="flex flex-col gap-2 md:items-end md:pt-14"
           >
             <NuxtLink
               v-if="!project.private"
@@ -127,7 +127,7 @@ const relatedProjects = ALL_PROJECTS
             enter: { opacity: 1, y: 0 },
             delay: 260,
           }"
-          class="opacity-0 flex flex-wrap gap-2 mt-6"
+          class="flex flex-wrap gap-2 mt-6"
         >
           <span class="text-xs px-3 py-1 rounded-full font-bold" :class="useLangColor(project.lang)">
             {{ project.lang }}
@@ -155,7 +155,7 @@ const relatedProjects = ALL_PROJECTS
             v-motion
             :initial="{ opacity: 0, y: 24 }"
             :visibleOnce="{ opacity: 1, y: 0 }"
-            class="opacity-0"
+           
           >
             <h2 class="text-lg font-bold text-slate-800 mb-3">À propos du projet</h2>
             <p class="text-slate-600 text-sm leading-relaxed">
@@ -169,7 +169,7 @@ const relatedProjects = ALL_PROJECTS
             :initial="{ opacity: 0, y: 24 }"
             :visibleOnce="{ opacity: 1, y: 0 }"
             :delay="80"
-            class="opacity-0"
+           
           >
             <h2 class="text-lg font-bold text-slate-800 mb-4">Fonctionnalités clés</h2>
             <ul class="flex flex-col gap-3">
@@ -180,7 +180,7 @@ const relatedProjects = ALL_PROJECTS
                 :initial="{ opacity: 0, x: -16 }"
                 :visibleOnce="{ opacity: 1, x: 0 }"
                 :delay="60 * idx"
-                class="opacity-0 flex items-start gap-3"
+                class="flex items-start gap-3"
               >
                 <span
                   class="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
@@ -199,7 +199,7 @@ const relatedProjects = ALL_PROJECTS
             :initial="{ opacity: 0, y: 24 }"
             :visibleOnce="{ opacity: 1, y: 0 }"
             :delay="160"
-            class="opacity-0 bg-slate-900 rounded-2xl p-5 font-mono text-xs border border-slate-700 shadow-lg"
+            class="bg-slate-900 rounded-2xl p-5 font-mono text-xs border border-slate-700 shadow-lg"
           >
             <div class="flex items-center gap-1.5 mb-4 pb-3 border-b border-slate-700">
               <div class="w-3 h-3 rounded-full bg-red-400"></div>
@@ -239,7 +239,7 @@ const relatedProjects = ALL_PROJECTS
             :initial="{ opacity: 0, x: 24 }"
             :visibleOnce="{ opacity: 1, x: 0 }"
             :delay="100"
-            class="opacity-0 border border-slate-200 rounded-2xl p-5 bg-white"
+            class="border border-slate-200 rounded-2xl p-5 bg-white"
           >
             <h3 class="text-sm font-bold text-slate-700 mb-4">Infos du projet</h3>
             <div class="flex flex-col gap-3">
@@ -296,7 +296,7 @@ const relatedProjects = ALL_PROJECTS
             :initial="{ opacity: 0, x: 24 }"
             :visibleOnce="{ opacity: 1, x: 0 }"
             :delay="160"
-            class="opacity-0 group flex items-center gap-3 border border-slate-200 rounded-2xl p-5 bg-white hover:border-orange-300 hover:shadow-md transition-all"
+            class="group flex items-center gap-3 border border-slate-200 rounded-2xl p-5 bg-white hover:border-orange-300 hover:shadow-md transition-all"
           >
             <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center flex-shrink-0">
               <Icon name="uil:github" size="20" class="text-white" />
@@ -313,7 +313,7 @@ const relatedProjects = ALL_PROJECTS
             :initial="{ opacity: 0, x: 24 }"
             :visibleOnce="{ opacity: 1, x: 0 }"
             :delay="160"
-            class="opacity-0 flex items-center gap-3 border border-emerald-200 rounded-2xl p-5 bg-emerald-50"
+            class="flex items-center gap-3 border border-emerald-200 rounded-2xl p-5 bg-emerald-50"
           >
             <div class="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0">
               <Icon name="material-symbols:lock" size="20" class="text-white" />
@@ -331,7 +331,7 @@ const relatedProjects = ALL_PROJECTS
             :initial="{ opacity: 0, x: 24 }"
             :visibleOnce="{ opacity: 1, x: 0 }"
             :delay="220"
-            class="opacity-0"
+           
           >
             <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Projets similaires</h3>
             <div class="flex flex-col gap-2">

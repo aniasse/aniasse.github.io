@@ -24,7 +24,7 @@ const devOpsStack = [
         <!-- status badge -->
         <div
           v-motion="{ initial: { opacity: 0, y: -10 }, enter: { opacity: 1, y: 0 } }"
-          class="opacity-0 font-mono text-xs text-green-700 bg-green-50 border border-green-200 px-3 py-1 rounded-full w-fit mb-5 flex items-center gap-2"
+          class="font-mono text-xs text-green-700 bg-green-50 border border-green-200 px-3 py-1 rounded-full w-fit mb-5 flex items-center gap-2"
         >
           <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse inline-block" />
           systems-engineer --status open-to-work
@@ -33,7 +33,7 @@ const devOpsStack = [
         <!-- name -->
         <h1
           v-motion="{ initial: { opacity: 0, x: -80 }, enter: { opacity: 1, x: 0 }, delay: 80 }"
-          class="opacity-0 mb-4 block text-[2.5rem] font-[1000] leading-none md:mb-6 md:text-7xl text-slate-800"
+          class="mb-4 block text-[2.5rem] font-[1000] leading-none md:mb-6 md:text-7xl text-slate-800"
         >
           Je suis
           <strong style="color: #FFA500">Adama</strong>
@@ -43,7 +43,7 @@ const devOpsStack = [
         <!-- subtitle -->
         <h2
           v-motion="{ initial: { opacity: 0, x: -80 }, enter: { opacity: 1, x: 0 }, delay: 160 }"
-          class="opacity-0 text-base text-slate-500 md:text-lg"
+          class="text-base text-slate-500 md:text-lg"
         >
           <span class="font-bold text-slate-700">Software Engineer</span>
           &nbsp;·&nbsp; Cloud-DevOps &nbsp;·&nbsp; Cybersecurity
@@ -58,7 +58,7 @@ const devOpsStack = [
           :initial="{ opacity: 0, x: -80 }"
           :enter="{ opacity: 1, x: 0 }"
           :delay="240"
-          class="opacity-0 flex items-center mt-8 gap-4"
+          class="flex items-center mt-8 gap-4"
         >
           <NuxtLink
             to="/about"
@@ -81,7 +81,7 @@ const devOpsStack = [
           :initial="{ opacity: 0, x: -80 }"
           :enter="{ opacity: 1, x: 0 }"
           :delay="320"
-          class="opacity-0 mt-16 flex flex-col gap-2"
+          class="mt-16 flex flex-col gap-2"
         >
           <p class="text-[10px] uppercase tracking-widest font-mono text-slate-400">tech stack</p>
           <div class="flex flex-wrap gap-3 items-center text-slate-400">
@@ -111,7 +111,7 @@ const devOpsStack = [
       <!-- Right: photo + terminal (desktop) -->
       <div
         v-motion="{ initial: { opacity: 0, x: 60 }, enter: { opacity: 1, x: 0 }, delay: 200 }"
-        class="opacity-0 max-md:hidden flex flex-col gap-4 items-center flex-shrink-0"
+        class="max-md:hidden flex flex-col gap-4 items-center flex-shrink-0"
       >
         <NuxtImg
           format="webp"
@@ -147,7 +147,7 @@ const devOpsStack = [
     <!-- Mobile: photo + mini terminal (visible only on mobile) -->
     <div
       v-motion="{ initial: { opacity: 0, y: 30 }, enter: { opacity: 1, y: 0 }, delay: 300 }"
-      class="opacity-0 md:hidden flex gap-4 items-start mt-10"
+      class="md:hidden flex gap-4 items-start mt-10"
     >
       <NuxtImg
         format="webp"

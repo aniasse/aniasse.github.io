@@ -162,7 +162,7 @@ const tools = [
         <!-- Text -->
         <div
           v-motion="{ initial: { opacity: 0, x: -60 }, enter: { opacity: 1, x: 0 } }"
-          class="opacity-0 flex-1"
+          class="flex-1"
         >
           <div class="font-mono text-xs text-slate-400 uppercase tracking-widest mb-4">aniasse / about</div>
           <h1 class="text-4xl md:text-5xl font-[900] text-slate-800 mb-6 leading-tight">
@@ -220,7 +220,7 @@ const tools = [
         <!-- Photo -->
         <div
           v-motion="{ initial: { opacity: 0, x: 60 }, enter: { opacity: 1, x: 0 }, delay: 150 }"
-          class="opacity-0 flex flex-col items-center gap-4"
+          class="flex flex-col items-center gap-4"
         >
           <NuxtImg
             format="webp"
@@ -263,7 +263,7 @@ const tools = [
             :initial="{ opacity: 0, y: 30 }"
             :visibleOnce="{ opacity: 1, y: 0 }"
             :delay="80 * index"
-            class="opacity-0 border border-slate-200 rounded-2xl p-5 bg-white hover:border-orange-300 hover:shadow-md transition-all"
+            class="border border-slate-200 rounded-2xl p-5 bg-white hover:border-orange-300 hover:shadow-md transition-all"
           >
             <div class="flex items-center gap-3 mb-4">
               <div :class="[skill.color, 'w-9 h-9 rounded-xl flex items-center justify-center']">
@@ -286,7 +286,7 @@ const tools = [
         <!-- Tools bar -->
         <div
           v-motion="{ initial: { opacity: 0, y: 20 }, visibleOnce: { opacity: 1, y: 0 }, delay: 400 }"
-          class="opacity-0 mt-6 border border-slate-100 rounded-2xl bg-slate-50 px-6 py-4 flex flex-wrap items-center gap-6"
+          class="mt-6 border border-slate-100 rounded-2xl bg-slate-50 px-6 py-4 flex flex-wrap items-center gap-6"
         >
           <p class="text-xs text-slate-400 font-mono mr-2 flex-shrink-0">Outils ·</p>
           <div
@@ -319,7 +319,7 @@ const tools = [
               :initial="{ opacity: 0, x: -24 }"
               :visibleOnce="{ opacity: 1, x: 0 }"
               :delay="80 * idx"
-              class="opacity-0 relative flex gap-5"
+              class="relative flex gap-5"
             >
               <div class="flex-shrink-0 relative z-10">
                 <div class="w-10 h-10 rounded-xl flex items-center justify-center" :class="exp.color">
@@ -365,7 +365,7 @@ const tools = [
               :initial="{ opacity: 0, x: -24 }"
               :visibleOnce="{ opacity: 1, x: 0 }"
               :delay="80 * idx"
-              class="opacity-0 relative flex gap-5"
+              class="relative flex gap-5"
             >
               <div class="flex-shrink-0 relative z-10">
                 <div class="w-10 h-10 rounded-xl flex items-center justify-center" :class="edu.color">
@@ -400,7 +400,7 @@ const tools = [
             :initial="{ opacity: 0, y: 24 }"
             :visibleOnce="{ opacity: 1, y: 0 }"
             :delay="80 * idx"
-            class="opacity-0 border border-slate-200 rounded-2xl p-5 bg-white hover:border-orange-300 hover:shadow-md transition-all flex items-start gap-4"
+            class="border border-slate-200 rounded-2xl p-5 bg-white hover:border-orange-300 hover:shadow-md transition-all flex items-start gap-4"
           >
             <div :class="[cert.color, 'w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0']">
               <Icon :name="cert.icon" size="20" />
@@ -420,7 +420,7 @@ const tools = [
       <div class="content-wrapper w-full">
         <div
           v-motion="{ initial: { opacity: 0, y: 24 }, visibleOnce: { opacity: 1, y: 0 } }"
-          class="opacity-0 rounded-2xl bg-slate-950 border border-slate-800 p-10 text-center"
+          class="rounded-2xl bg-slate-950 border border-slate-800 p-10 text-center"
         >
           <h3 class="text-xl font-bold text-white mb-2">Envie de collaborer ?</h3>
           <p class="text-sm text-slate-400 mb-6 max-w-md mx-auto">

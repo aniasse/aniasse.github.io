@@ -44,7 +44,7 @@ const experiences = [
     <!-- header -->
     <div
       v-motion="{ initial: { opacity: 0, y: 20 }, visibleOnce: { opacity: 1, y: 0 } }"
-      class="opacity-0 mb-10"
+      class="mb-10"
     >
       <p class="font-mono text-xs uppercase tracking-widest text-slate-400">Parcours</p>
       <h2 class="text-2xl font-bold text-slate-700 mt-1">Expérience & Formation</h2>
@@ -63,7 +63,7 @@ const experiences = [
           :initial="{ opacity: 0, x: -24 }"
           :visibleOnce="{ opacity: 1, x: 0 }"
           :delay="80 * idx"
-          class="opacity-0 relative flex gap-5"
+          class="relative flex gap-5"
         >
           <!-- Dot -->
           <div class="flex-shrink-0 relative z-10">

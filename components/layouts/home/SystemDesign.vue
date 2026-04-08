@@ -8,7 +8,7 @@
           initial: { opacity: 0, y: 20 },
           visibleOnce: { opacity: 1, y: 0 },
         }"
-        class="opacity-0 mb-10"
+        class="mb-10"
       >
         <p class="font-mono text-xs uppercase tracking-widest text-slate-500">Architecture système</p>
         <h2 class="text-2xl font-bold text-white mt-1">
@@ -29,7 +29,7 @@
             visibleOnce: { opacity: 1, x: 0 },
             delay: 100,
           }"
-          class="opacity-0 flex-1"
+          class="flex-1"
         >
           <div class="bg-slate-900 border border-slate-700 rounded-2xl p-6 font-mono text-xs leading-relaxed">
             <div class="flex items-center gap-1.5 mb-4 pb-3 border-b border-slate-700">
@@ -71,7 +71,7 @@
             visibleOnce: { opacity: 1, x: 0 },
             delay: 200,
           }"
-          class="opacity-0 flex flex-col gap-4 flex-1"
+          class="flex flex-col gap-4 flex-1"
         >
           <div
             v-for="(principle, index) in principles"
@@ -80,7 +80,7 @@
             :initial="{ opacity: 0, y: 20 }"
             :visibleOnce="{ opacity: 1, y: 0 }"
             :delay="150 + 80 * index"
-            class="opacity-0 flex gap-4 p-4 rounded-xl border border-slate-700 bg-slate-900 hover:border-slate-500 transition-colors"
+            class="flex gap-4 p-4 rounded-xl border border-slate-700 bg-slate-900 hover:border-slate-500 transition-colors"
           >
             <div :class="[principle.color, 'w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0']">
               <Icon :name="principle.icon" size="18" class="text-white" />
