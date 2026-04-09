@@ -19,7 +19,7 @@ const is404 = computed(() => props.error.statusCode === 404)
       <!-- Error code -->
       <div
         v-motion="{ initial: { opacity: 0, scale: 0.8 }, enter: { opacity: 1, scale: 1 } }"
-        class="opacity-0 mb-6"
+        class="mb-6"
       >
         <p class="text-[120px] md:text-[160px] font-[900] leading-none text-slate-100 select-none">
           {{ error.statusCode }}
@@ -29,7 +29,7 @@ const is404 = computed(() => props.error.statusCode === 404)
       <!-- Terminal mockup -->
       <div
         v-motion="{ initial: { opacity: 0, y: 20 }, enter: { opacity: 1, y: 0 }, delay: 100 }"
-        class="opacity-0 bg-slate-900 rounded-2xl p-5 font-mono text-xs text-left mb-8 border border-slate-700 max-w-sm mx-auto"
+        class="bg-slate-900 rounded-2xl p-5 font-mono text-xs text-left mb-8 border border-slate-700 max-w-sm mx-auto"
       >
         <div class="flex items-center gap-1.5 mb-3 pb-2 border-b border-slate-700">
           <div class="w-2.5 h-2.5 rounded-full bg-red-400" />
@@ -54,13 +54,13 @@ const is404 = computed(() => props.error.statusCode === 404)
       <!-- Message -->
       <h1
         v-motion="{ initial: { opacity: 0, y: 16 }, enter: { opacity: 1, y: 0 }, delay: 200 }"
-        class="opacity-0 text-xl font-bold text-slate-800 mb-2"
+        class="text-xl font-bold text-slate-800 mb-2"
       >
         {{ is404 ? 'Page introuvable' : 'Erreur serveur' }}
       </h1>
       <p
         v-motion="{ initial: { opacity: 0 }, enter: { opacity: 1 }, delay: 260 }"
-        class="opacity-0 text-sm text-slate-500 mb-8"
+        class="text-sm text-slate-500 mb-8"
       >
         {{ is404
           ? 'Cette page n\'existe pas ou a été déplacée.'
@@ -71,7 +71,7 @@ const is404 = computed(() => props.error.statusCode === 404)
       <!-- CTA -->
       <div
         v-motion="{ initial: { opacity: 0, y: 16 }, enter: { opacity: 1, y: 0 }, delay: 320 }"
-        class="opacity-0 flex items-center justify-center gap-3"
+        class="flex items-center justify-center gap-3"
       >
         <button
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-slate-800 text-white hover:bg-slate-700 transition-colors"
