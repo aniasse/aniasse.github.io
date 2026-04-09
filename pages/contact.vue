@@ -59,7 +59,7 @@ const contacts = [
         </h1>
         <p class="text-slate-500 text-base max-w-lg leading-relaxed">
           Disponible pour des missions freelance, des collaborations tech
-          ou simplement discuter systèmes distribués autour d'un café.
+          ou simplement discuter autour d'un café.
         </p>
       </div>
     </section>

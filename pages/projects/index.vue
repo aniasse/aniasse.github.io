@@ -81,7 +81,7 @@ const categoriesWithCount = computed(() =>
           </NuxtLink>
           <div class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium border border-slate-200 text-slate-500">
             <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-            Open source · Zone01 Dakar
+            Open source
           </div>
         </div>
       </div>

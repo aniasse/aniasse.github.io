@@ -169,7 +169,7 @@ const tools = [
             Adama <span class="text-orange-500">Niasse</span>
           </h1>
           <p class="text-slate-600 text-base leading-relaxed mb-4">
-            <strong>Software Engineer</strong> de 25 ans, basé à Pikine, Dakar. Spécialisé en <strong>Go</strong> et <strong>Rust</strong> pour les systèmes performants,
+            <strong>Software Engineer</strong>, basé à Dakar. Spécialisé en <strong>Go</strong> et <strong>Rust</strong> pour les systèmes performants,
             et en <strong>Vue.js / Nuxt</strong> pour les interfaces modernes.
           </p>
           <p class="text-slate-600 text-base leading-relaxed mb-4">
@@ -233,11 +233,11 @@ const tools = [
           <div class="w-56 md:w-64 bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs">
             <div class="flex items-center gap-2 mb-2">
               <Icon name="material-symbols:location-on-outline" size="14" class="text-slate-400" />
-              <span class="text-slate-600 font-medium">Pikine, Dakar, Sénégal</span>
+              <span class="text-slate-600 font-medium">Dakar, Sénégal</span>
             </div>
             <div class="flex items-center gap-2 mb-2">
               <Icon name="material-symbols:work-outline" size="14" class="text-slate-400" />
-              <span class="text-slate-600 font-medium">01Talent Sénégal</span>
+              <span class="text-slate-600 font-medium">01Talent Afrique</span>
             </div>
             <div class="flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
