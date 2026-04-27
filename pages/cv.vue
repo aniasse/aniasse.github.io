@@ -175,14 +175,14 @@ const handlePrint = () => window.print()
         <h2 class="cv-section-title">Projets Clés</h2>
 
         <ul class="cv-list">
+          <li><strong>eCampus</strong> — Plateforme de campus virtuel multi-tenant pour l'Afrique francophone : 22+ microservices Go, classes virtuelles LiveKit, IA conversationnelle, mobile money. En production sur ecampus-sn.com</li>
+          <li><strong>PharmOS</strong> — Plateforme logicielle pour officines pharmaceutiques (Sénégal/UEMOA) : POS cloud-first, traçabilité GS1, tiers payant CMU/IPM, comptabilité SYSCOHADA</li>
           <li><strong>Souhibou Télécom</strong> (Freelance) — Écosystème e-commerce high-tech : plateforme Next.js, dashboard CRM admin, app mobile, API Go, paiement CinetPay</li>
           <li><strong>Jamah Pikine</strong> (Freelance) — Écosystème communautaire : plateforme web + dashboard admin + apps mobiles (React Native, Capacitor), streaming audio, Supabase, AWS S3</li>
           <li><strong>Secure-Shield</strong> (Open Source) — Plateforme SOC avec agent IA pour détection d'incidents en temps réel (TypeScript)</li>
           <li><strong>Cloud-Design</strong> (Open Source) — Infrastructure microservices AWS avec Terraform, ECS, auto-scaling, monitoring CloudWatch</li>
           <li><strong>Multiplayer FPS</strong> (Open Source) — Jeu FPS multijoueur en Rust avec Bevy Engine, netcode UDP, prédiction client</li>
-          <li><strong>0-Shell</strong> (Open Source) — Shell Unix complet en Go : syscalls fork/exec, signaux, pipes, redirections I/O</li>
         </ul>
-        <p class="cv-projects-footer">+ 60 autres projets sur <a href="https://github.com/aniasse">github.com/aniasse</a></p>
       </section>
 
       <div class="cv-divider" />
