@@ -77,6 +77,14 @@ const experiences = [
 
 const education = [
   {
+    period: 'Avril 2026 — en cours',
+    title: 'Tech Academy — Cloud Platform Security',
+    place: 'Alibaba Cloud · Dakar 2026 (en anglais)',
+    description: 'Programme officiel Dakar 2026 sur la sécurité des plateformes cloud Alibaba Cloud — modules dispensés en anglais.',
+    icon: 'material-symbols:cloud',
+    color: 'bg-emerald-600',
+  },
+  {
     period: '2022 — 2025',
     title: 'Full Stack Developer — Spécialisation Cloud & DevOps',
     place: 'Zone01 Dakar',
