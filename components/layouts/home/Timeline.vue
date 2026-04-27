@@ -1,6 +1,15 @@
 <script setup lang="ts">
 const experiences = [
   {
+    period: 'Avril 2026 — en cours',
+    title: 'Tech Academy — Cloud Platform Security',
+    subtitle: 'Alibaba Cloud · Dakar 2026',
+    description: 'Programme officiel Dakar 2026 sur la sécurité des plateformes cloud Alibaba Cloud — formation en anglais.',
+    tags: ['Alibaba Cloud', 'Cloud Security', 'Dakar 2026'],
+    icon: 'material-symbols:cloud',
+    color: 'bg-emerald-600',
+  },
+  {
     period: '2025 — 2026',
     title: 'Développeur Freelance',
     subtitle: 'Full Stack · Dakar & Remote',

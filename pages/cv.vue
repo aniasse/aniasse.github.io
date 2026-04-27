@@ -223,6 +223,16 @@ const handlePrint = () => window.print()
         <div class="cv-entry cv-entry-compact">
           <div class="cv-entry-header">
             <div>
+              <h3 class="cv-entry-title">Cloud Platform Security — Tech Academy</h3>
+              <p class="cv-entry-company">Alibaba Cloud · Dakar 2026 (en anglais)</p>
+            </div>
+            <span class="cv-entry-date">Avril 2026 — en cours</span>
+          </div>
+        </div>
+
+        <div class="cv-entry cv-entry-compact">
+          <div class="cv-entry-header">
+            <div>
               <h3 class="cv-entry-title">Full Stack Developer — Spécialisation Cloud & DevOps</h3>
               <p class="cv-entry-company">Zone01 Dakar</p>
             </div>
