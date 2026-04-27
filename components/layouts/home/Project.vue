@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { ALL_PROJECTS, useLangColor, useCategoryIcon, useCategoryAccent } from '~/composables/useProjects'
 
+// Best project — en production
+const bestProject = ALL_PROJECTS.find(p => p.slug === 'ecampus')!
+
 // Projet phare (flagship)
-const flagship = ALL_PROJECTS.find(p => p.slug === 'secure-shield')!
+const flagship = ALL_PROJECTS.find(p => p.slug === 'pharmos')!
 
 // 6 projets mis en avant (variété de catégories + SaaS)
 const featured = [
@@ -16,7 +19,7 @@ const featured = [
 
 // Stats par catégorie
 const categoryStats = [
-  { label: 'Apps & SaaS', count: 6, icon: 'material-symbols:rocket-launch', color: 'text-emerald-400' },
+  { label: 'Apps & SaaS', count: 8, icon: 'material-symbols:rocket-launch', color: 'text-emerald-400' },
   { label: 'Sécurité & IA', count: 1, icon: 'material-symbols:security', color: 'text-red-400' },
   { label: 'DevOps & Cloud', count: 6, icon: 'material-symbols:cloud', color: 'text-purple-400' },
   { label: 'Systèmes Rust', count: 5, icon: 'mdi:language-rust', color: 'text-orange-400' },
@@ -59,6 +62,100 @@ const categoryStats = [
         </NuxtLink>
       </div>
 
+      <!-- ── Best Project (en production) ── -->
+      <NuxtLink
+        :to="`/projects/${bestProject.slug}`"
+        v-motion="{
+          initial: { opacity: 0, y: 30 },
+          visibleOnce: { opacity: 1, y: 0 },
+          delay: 40,
+        }"
+        class="group block w-full mb-5 rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-950 to-emerald-950/30 p-7 hover:border-emerald-500 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
+      >
+        <div class="flex items-start justify-between gap-6 flex-wrap">
+          <div class="flex-1 min-w-0">
+            <!-- Label -->
+            <div class="flex items-center gap-2 mb-4 flex-wrap">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <Icon name="material-symbols:star" size="11" />
+                Best Project · Apps & SaaS
+              </div>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-green-500/10 text-green-400 border border-green-500/20">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                En production
+              </div>
+            </div>
+            <h3 class="text-2xl font-[900] text-white mb-2 group-hover:text-emerald-400 transition-colors">
+              {{ bestProject.title }}
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed max-w-2xl mb-5">
+              {{ bestProject.longDescription }}
+            </p>
+            <!-- Features preview -->
+            <ul class="flex flex-col gap-1.5 mb-5">
+              <li
+                v-for="feat in bestProject.features.slice(0, 3)"
+                :key="feat"
+                class="flex items-start gap-2 text-xs text-slate-500"
+              >
+                <Icon name="material-symbols:check-small" size="14" class="text-emerald-500 flex-shrink-0 mt-0.5" />
+                {{ feat }}
+              </li>
+            </ul>
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] px-2.5 py-1 rounded-full font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                {{ bestProject.lang }}
+              </span>
+              <span
+                v-for="tag in bestProject.tags.filter(t => t !== bestProject.lang).slice(0, 6)"
+                :key="tag"
+                class="text-[10px] px-2.5 py-1 rounded-full bg-slate-800 text-slate-400 border border-slate-700"
+              >
+                {{ tag }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Terminal -->
+          <div class="flex-shrink-0 w-64 bg-slate-900 rounded-xl p-4 font-mono text-[11px] border border-slate-700 self-start">
+            <div class="flex items-center gap-1.5 mb-3 pb-2 border-b border-slate-700">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+              <span class="ml-1 text-slate-500 text-[9px]">amigo.go</span>
+            </div>
+            <p><span class="text-purple-400">package</span> <span class="text-slate-300">amigo</span></p>
+            <p class="mt-2"><span class="text-purple-400">func</span> <span class="text-yellow-300">Brief</span><span class="text-slate-500">(</span>ctx Context<span class="text-slate-500">) {</span></p>
+            <p class="pl-3"><span class="text-slate-300">tools</span> <span class="text-slate-500">:=</span> <span class="text-yellow-300">RoleTools</span><span class="text-slate-500">(</span>ctx<span class="text-slate-500">.</span>Role<span class="text-slate-500">)</span></p>
+            <p class="pl-3"><span class="text-blue-400">return</span> llm<span class="text-slate-500">.</span><span class="text-yellow-300">Stream</span><span class="text-slate-500">(</span>tools<span class="text-slate-500">)</span></p>
+            <p><span class="text-slate-500">}</span></p>
+            <p class="mt-3 text-slate-500">// 22 services · NATS · LiveKit</p>
+            <span class="text-emerald-400 animate-pulse">▋</span>
+          </div>
+        </div>
+
+        <!-- Footer bar -->
+        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between flex-wrap gap-3">
+          <a
+            v-if="bestProject.liveUrl"
+            :href="bestProject.liveUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            @click.stop
+            class="inline-flex items-center gap-2 text-xs text-emerald-400 font-mono hover:text-emerald-300 transition-colors"
+          >
+            <Icon name="material-symbols:public" size="13" />
+            {{ bestProject.liveUrl.replace(/^https?:\/\//, '') }}
+            <Icon name="material-symbols:arrow-outward" size="11" />
+          </a>
+          <span class="inline-flex items-center gap-1.5 text-xs text-emerald-400 font-semibold group-hover:gap-2.5 transition-all">
+            Voir le projet
+            <Icon name="material-symbols:arrow-outward" size="13" />
+          </span>
+        </div>
+      </NuxtLink>
+
       <!-- ── Flagship project ── -->
       <NuxtLink
         :to="`/projects/${flagship.slug}`"
@@ -72,9 +169,9 @@ const categoryStats = [
         <div class="flex items-start justify-between gap-6 flex-wrap">
           <div class="flex-1 min-w-0">
             <!-- Label -->
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-red-500/10 text-red-400 border border-red-500/20 mb-4">
-              <Icon name="material-symbols:security" size="11" />
-              Projet Phare · Sécurité & IA
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-orange-500/10 text-orange-400 border border-orange-500/20 mb-4">
+              <Icon name="material-symbols:rocket-launch" size="11" />
+              Projet Phare · {{ flagship.category }}
             </div>
             <h3 class="text-2xl font-[900] text-white mb-2 group-hover:text-orange-400 transition-colors">
               {{ flagship.title }}
@@ -95,11 +192,11 @@ const categoryStats = [
             </ul>
             <!-- Tags -->
             <div class="flex flex-wrap gap-1.5">
-              <span class="text-[10px] px-2.5 py-1 rounded-full font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20">
+              <span class="text-[10px] px-2.5 py-1 rounded-full font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20">
                 {{ flagship.lang }}
               </span>
               <span
-                v-for="tag in flagship.tags.filter(t => t !== flagship.lang)"
+                v-for="tag in flagship.tags.filter(t => t !== flagship.lang).slice(0, 6)"
                 :key="tag"
                 class="text-[10px] px-2.5 py-1 rounded-full bg-slate-800 text-slate-400 border border-slate-700"
               >
@@ -114,23 +211,24 @@ const categoryStats = [
               <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
               <div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
               <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-              <span class="ml-1 text-slate-500 text-[9px]">secure-shield.ts</span>
+              <span class="ml-1 text-slate-500 text-[9px]">pos/dispense.go</span>
             </div>
-            <p><span class="text-purple-400">import</span> <span class="text-slate-300">&#123; SOCAgent &#125;</span> <span class="text-purple-400">from</span> <span class="text-green-400">'./agent'</span></p>
-            <p class="mt-2"><span class="text-blue-400">const</span> <span class="text-slate-300">agent</span> <span class="text-slate-500">=</span> <span class="text-blue-400">new</span> <span class="text-yellow-300">SOCAgent</span><span class="text-slate-500">(&#123;</span></p>
-            <p class="pl-3"><span class="text-orange-300">model</span><span class="text-slate-500">:</span> <span class="text-green-400">'claude-3-5'</span><span class="text-slate-500">,</span></p>
-            <p class="pl-3"><span class="text-orange-300">realtime</span><span class="text-slate-500">:</span> <span class="text-blue-300">true</span><span class="text-slate-500">,</span></p>
-            <p><span class="text-slate-500">&#125;)</span></p>
-            <p class="mt-2"><span class="text-blue-400">await</span> agent<span class="text-slate-500">.</span><span class="text-yellow-300">detect</span><span class="text-slate-500">(</span>threats<span class="text-slate-500">)</span></p>
-            <span class="text-green-400 animate-pulse">▋</span>
+            <p><span class="text-purple-400">package</span> <span class="text-slate-300">pos</span></p>
+            <p class="mt-2"><span class="text-purple-400">func</span> <span class="text-yellow-300">Dispense</span><span class="text-slate-500">(</span>cip GS1<span class="text-slate-500">) {</span></p>
+            <p class="pl-3">stock<span class="text-slate-500">.</span><span class="text-yellow-300">FEFO</span><span class="text-slate-500">(</span>cip<span class="text-slate-500">)</span></p>
+            <p class="pl-3">cmu<span class="text-slate-500">.</span><span class="text-yellow-300">Claim</span><span class="text-slate-500">(</span>patient<span class="text-slate-500">)</span></p>
+            <p class="pl-3">syscohada<span class="text-slate-500">.</span><span class="text-yellow-300">Post</span><span class="text-slate-500">()</span></p>
+            <p><span class="text-slate-500">}</span></p>
+            <p class="mt-3 text-slate-500">// monolithe modulaire · NATS</p>
+            <span class="text-orange-400 animate-pulse">▋</span>
           </div>
         </div>
 
         <!-- Footer bar -->
         <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <Icon name="uil:github" size="13" class="text-slate-500" />
-            <span class="text-xs text-slate-500 font-mono">aniasse/{{ flagship.repo }}</span>
+            <Icon name="material-symbols:lock" size="13" class="text-slate-500" />
+            <span class="text-xs text-slate-500 font-mono">{{ flagship.private ? 'projet propriétaire' : `aniasse/${flagship.repo}` }}</span>
           </div>
           <span class="inline-flex items-center gap-1.5 text-xs text-orange-400 font-semibold group-hover:gap-2.5 transition-all">
             Voir le projet

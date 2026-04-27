@@ -11,6 +11,7 @@ export interface Project {
   tags: string[]
   category: Category
   private?: boolean
+  liveUrl?: string
 }
 
 export const ALL_PROJECTS: Project[] = [
@@ -634,6 +635,43 @@ export const ALL_PROJECTS: Project[] = [
   },
 
   // ───── Apps & SaaS (projets privés / professionnels) ─────
+  {
+    slug: 'ecampus',
+    title: 'eCampus',
+    repo: 'eCampus',
+    lang: 'Go',
+    description: 'Plateforme de campus virtuel multi-tenant — microservices Go, classes virtuelles LiveKit, IA conversationnelle et mobile money. En production sur ecampus-sen.com.',
+    longDescription: 'eCampus unifie en une seule expérience numérique tout ce qui fait la vie d\'un établissement africain : cours, devoirs, classes virtuelles, notes, bulletins LMD, finances, communication, vie scolaire. L\'architecture repose sur 22+ microservices Go (un par domaine, base PostgreSQL dédiée), trois clients (web Next.js 16, panel admin Next.js, app mobile Expo) et un assistant IA conversationnel (Amigo) branché sur Claude ou Gemini avec function calling. Multi-tenant strict via JWT (X-User-Institution propagé à tous les services), classes virtuelles LiveKit avec replay automatique via Egress, paiement mobile money intégré (Wave, Orange Money, MTN, Free Money). Conçu pour fonctionner en contexte africain : 3G, smartphones d\'entrée de gamme, mode dégradé.',
+    features: [
+      '22+ microservices Go avec NATS JetStream et observabilité OpenTelemetry/Jaeger',
+      'Classes virtuelles LiveKit + Egress pour replay MP4 automatique',
+      'Amigo — assistant IA conversationnel (Claude/Gemini) avec function calling rôle-aware',
+      'Multi-tenant par institution (UCAD, UGB) — isolation systématique sameTenant()',
+      'Mobile money sénégalais (Wave, Orange Money, MTN MoMo, Free Money) + factures',
+    ],
+    tags: ['Go', 'Next.js', 'Expo', 'PostgreSQL', 'NATS', 'LiveKit', 'Multi-tenant', 'Mobile Money', 'AI Agent'],
+    category: 'Apps & SaaS',
+    private: true,
+    liveUrl: 'https://ecampus-sen.com',
+  },
+  {
+    slug: 'pharmos',
+    title: 'PharmOS',
+    repo: 'pharmos',
+    lang: 'Go',
+    description: 'Plateforme logicielle complète pour officines pharmaceutiques au Sénégal et en zone UEMOA — POS cloud-first, traçabilité GS1, tiers payant CMU/IPM, comptabilité SYSCOHADA.',
+    longDescription: 'PharmOS est une plateforme métier qui ambitionne de devenir le système d\'exploitation par défaut des officines en Afrique francophone. Le produit remplace le papier et Excel par un POS cloud-first multilingue (français + wolof), intègre nativement la sérialisation GS1 et la lutte contre les médicaments contrefaits, automatise le tiers payant CMU/IPM/mutuelles en temps réel, gère la comptabilité SYSCOHADA conforme OHADA de bout en bout (sans dépendance à Sage/Ciel) et fonctionne en mode dégradé pour les officines sans réseau (synchro différée). L\'architecture est un monolithe modulaire Go découpé en modules métier isolés (identity, catalog, stock FEFO, POS, accounting, regulatory, patient, coverage, payments) communiquant par événements via NATS JetStream avec outbox transactionnel. App desktop packagée via Tauri pour fonctionnement local.',
+    features: [
+      'Monolithe modulaire Go — 9 modules métier (POS, stock FEFO, comptabilité SYSCOHADA, etc.)',
+      'Outbox transactionnel + NATS JetStream avec mode dégradé si NATS down',
+      'Multi-officines (row-level scoping) — un user multi-membership avec rôle distinct par officine',
+      'Traçabilité GS1 datamatrix + registre stupéfiants + pharmacovigilance',
+      'Tiers payant CMU/IPM + mobile money (Wave, Orange Money, Free Money) — intentions QR/USSD',
+    ],
+    tags: ['Go', 'PostgreSQL', 'NATS', 'Tauri', 'React', 'Multi-tenant', 'SYSCOHADA', 'GS1', 'Mobile Money'],
+    category: 'Apps & SaaS',
+    private: true,
+  },
   {
     slug: 'souhibou-telecom',
     title: 'Souhibou Télécom',

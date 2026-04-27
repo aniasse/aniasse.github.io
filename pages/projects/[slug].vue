@@ -94,6 +94,17 @@ const relatedProjects = ALL_PROJECTS
             }"
             class="flex flex-col gap-2 md:items-end md:pt-14"
           >
+            <a
+              v-if="project.liveUrl"
+              :href="project.liveUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-emerald-600 text-white hover:bg-emerald-500 transition-colors"
+            >
+              <span class="w-2 h-2 rounded-full bg-green-300 animate-pulse"></span>
+              Voir en production
+              <Icon name="material-symbols:arrow-outward" size="14" />
+            </a>
             <NuxtLink
               v-if="!project.private"
               :to="`https://github.com/aniasse/${project.repo}`"
@@ -104,7 +115,7 @@ const relatedProjects = ALL_PROJECTS
               Voir sur GitHub
             </NuxtLink>
             <span
-              v-else
+              v-else-if="!project.liveUrl"
               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-emerald-600 text-white"
             >
               <Icon name="material-symbols:lock" size="16" />
@@ -271,6 +282,22 @@ const relatedProjects = ALL_PROJECTS
                   Privé
                 </span>
               </div>
+              <template v-if="project.liveUrl">
+                <div class="h-px bg-slate-100"></div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-slate-400">Site live</span>
+                  <a
+                    :href="project.liveUrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-xs font-semibold text-emerald-600 hover:text-emerald-700 transition-colors flex items-center gap-1"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                    {{ project.liveUrl.replace(/^https?:\/\//, '') }}
+                    <Icon name="material-symbols:arrow-outward" size="11" />
+                  </a>
+                </div>
+              </template>
               <div class="h-px bg-slate-100"></div>
               <div>
                 <span class="text-xs text-slate-400 block mb-2">Stack</span>
@@ -286,6 +313,31 @@ const relatedProjects = ALL_PROJECTS
               </div>
             </div>
           </div>
+
+          <!-- Live URL CTA -->
+          <a
+            v-if="project.liveUrl"
+            :href="project.liveUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            v-motion
+            :initial="{ opacity: 0, x: 24 }"
+            :visibleOnce="{ opacity: 1, x: 0 }"
+            :delay="140"
+            class="group flex items-center gap-3 border border-emerald-200 rounded-2xl p-5 bg-emerald-50 hover:border-emerald-400 hover:shadow-md transition-all"
+          >
+            <div class="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0">
+              <Icon name="material-symbols:public" size="20" class="text-white" />
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-bold text-slate-800 group-hover:text-emerald-700 transition-colors flex items-center gap-2">
+                Voir en production
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              </p>
+              <p class="text-xs text-slate-500 mt-0.5 truncate">{{ project.liveUrl.replace(/^https?:\/\//, '') }}</p>
+            </div>
+            <Icon name="material-symbols:arrow-outward" size="16" class="text-emerald-400 group-hover:text-emerald-600 transition-colors flex-shrink-0" />
+          </a>
 
           <!-- GitHub CTA -->
           <NuxtLink
@@ -308,7 +360,7 @@ const relatedProjects = ALL_PROJECTS
             <Icon name="material-symbols:arrow-outward" size="16" class="text-slate-300 group-hover:text-orange-400 transition-colors flex-shrink-0" />
           </NuxtLink>
           <div
-            v-else
+            v-else-if="!project.liveUrl"
             v-motion
             :initial="{ opacity: 0, x: 24 }"
             :visibleOnce="{ opacity: 1, x: 0 }"
