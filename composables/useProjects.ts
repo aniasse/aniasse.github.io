@@ -645,7 +645,7 @@ export const ALL_PROJECTS: Project[] = [
     features: [
       '22+ microservices Go avec NATS JetStream et observabilité OpenTelemetry/Jaeger',
       'Classes virtuelles LiveKit + Egress pour replay MP4 automatique',
-      'Amigo — assistant IA conversationnel (Claude/Gemini) avec function calling rôle-aware',
+      'Amigo — assistant IA conversationnel avec function calling rôle-aware',
       'Multi-tenant par institution (UCAD, UGB) — isolation systématique sameTenant()',
       'Mobile money sénégalais (Wave, Orange Money, MTN MoMo, Free Money) + factures',
     ],
