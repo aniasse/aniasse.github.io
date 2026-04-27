@@ -640,7 +640,7 @@ export const ALL_PROJECTS: Project[] = [
     title: 'eCampus',
     repo: 'eCampus',
     lang: 'Go',
-    description: 'Plateforme de campus virtuel multi-tenant — microservices Go, classes virtuelles LiveKit, IA conversationnelle et mobile money. En production sur ecampus-sen.com.',
+    description: 'Plateforme de campus virtuel multi-tenant — microservices Go, classes virtuelles LiveKit, IA conversationnelle et mobile money. En production sur ecampus-sn.com.',
     longDescription: 'eCampus unifie en une seule expérience numérique tout ce qui fait la vie d\'un établissement africain : cours, devoirs, classes virtuelles, notes, bulletins LMD, finances, communication, vie scolaire. L\'architecture repose sur 22+ microservices Go (un par domaine, base PostgreSQL dédiée), trois clients (web Next.js 16, panel admin Next.js, app mobile Expo) et un assistant IA conversationnel (Amigo) branché sur Claude ou Gemini avec function calling. Multi-tenant strict via JWT (X-User-Institution propagé à tous les services), classes virtuelles LiveKit avec replay automatique via Egress, paiement mobile money intégré (Wave, Orange Money, MTN, Free Money). Conçu pour fonctionner en contexte africain : 3G, smartphones d\'entrée de gamme, mode dégradé.',
     features: [
       '22+ microservices Go avec NATS JetStream et observabilité OpenTelemetry/Jaeger',
@@ -652,7 +652,7 @@ export const ALL_PROJECTS: Project[] = [
     tags: ['Go', 'Next.js', 'Expo', 'PostgreSQL', 'NATS', 'LiveKit', 'Multi-tenant', 'Mobile Money', 'AI Agent'],
     category: 'Apps & SaaS',
     private: true,
-    liveUrl: 'https://ecampus-sen.com',
+    liveUrl: 'https://ecampus-sn.com',
   },
   {
     slug: 'pharmos',

@@ -7,6 +7,32 @@ const bestProject = ALL_PROJECTS.find(p => p.slug === 'ecampus')!
 // Projet phare (flagship)
 const flagship = ALL_PROJECTS.find(p => p.slug === 'pharmos')!
 
+// SI eCampus — 9 modules en orbite
+const ecampusModules = [
+  { id: 'courses',   angle: -90, label: 'Cours',        group: 'core' as const },
+  { id: 'exams',     angle: -50, label: 'Examens',      group: 'core' as const },
+  { id: 'grades',    angle: -10, label: 'Notes',        group: 'core' as const },
+  { id: 'bulletins', angle:  30, label: 'Bulletins',    group: 'core' as const },
+  { id: 'live',      angle:  70, label: 'Classes live', group: 'comm' as const },
+  { id: 'feed',      angle: 110, label: 'Feed · Chat',  group: 'comm' as const },
+  { id: 'payments',  angle: 150, label: 'Mobile money', group: 'fin'  as const },
+  { id: 'direction', angle: 190, label: 'Direction',    group: 'fin'  as const },
+  { id: 'amigo',     angle: 230, label: 'Amigo · IA',   group: 'ai'   as const },
+]
+
+// SI PharmOS — 9 modules métier
+const pharmosModules = [
+  { id: 'identity',   angle: -90, label: 'Identity',     group: 'core' as const },
+  { id: 'catalog',    angle: -50, label: 'Catalog',      group: 'core' as const },
+  { id: 'patient',    angle: -10, label: 'Patient',      group: 'core' as const },
+  { id: 'stock',      angle:  30, label: 'Stock · FEFO', group: 'ops'  as const },
+  { id: 'pos',        angle:  70, label: 'POS',          group: 'ops'  as const },
+  { id: 'regulatory', angle: 110, label: 'GS1 · Reg',    group: 'ops'  as const },
+  { id: 'accounting', angle: 150, label: 'SYSCOHADA',    group: 'fin'  as const },
+  { id: 'coverage',   angle: 190, label: 'CMU · IPM',    group: 'fin'  as const },
+  { id: 'payments',   angle: 230, label: 'MoMo',         group: 'fin'  as const },
+]
+
 // 6 projets mis en avant (variété de catégories + SaaS)
 const featured = [
   'souhibou-telecom',
@@ -62,7 +88,7 @@ const categoryStats = [
         </NuxtLink>
       </div>
 
-      <!-- ── Best Project (en production) ── -->
+      <!-- ── Best Project (eCampus — en production) ── -->
       <NuxtLink
         :to="`/projects/${bestProject.slug}`"
         v-motion="{
@@ -70,93 +96,84 @@ const categoryStats = [
           visibleOnce: { opacity: 1, y: 0 },
           delay: 40,
         }"
-        class="group block w-full mb-5 rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-950 to-emerald-950/30 p-7 hover:border-emerald-500 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
+        class="group block w-full mb-5 rounded-2xl border border-slate-800 bg-slate-950 hover:border-emerald-500/60 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 overflow-hidden"
       >
-        <div class="flex items-start justify-between gap-6 flex-wrap">
-          <div class="flex-1 min-w-0">
-            <!-- Label -->
-            <div class="flex items-center gap-2 mb-4 flex-wrap">
-              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                <Icon name="material-symbols:star" size="11" />
-                Best Project · Apps & SaaS
-              </div>
-              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-green-500/10 text-green-400 border border-green-500/20">
-                <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
-                En production
-              </div>
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-0">
+          <!-- Brief — left column (architect sheet) -->
+          <div class="lg:col-span-2 p-7 border-b lg:border-b-0 lg:border-r border-slate-800 flex flex-col">
+            <!-- Eyebrow row : numbered architect tag -->
+            <div class="flex items-center justify-between mb-5">
+              <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">
+                001 · Best Project
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/5 font-mono text-[9px] uppercase tracking-widest text-emerald-400">
+                <span class="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
+                live
+              </span>
             </div>
-            <h3 class="text-2xl font-[900] text-white mb-2 group-hover:text-emerald-400 transition-colors">
+
+            <h3 class="text-3xl font-[900] text-white mb-1 leading-none group-hover:text-emerald-400 transition-colors">
               {{ bestProject.title }}
             </h3>
-            <p class="text-slate-400 text-sm leading-relaxed max-w-2xl mb-5">
-              {{ bestProject.longDescription }}
+            <p class="font-mono text-[11px] text-slate-500 mb-5 tracking-wide">
+              Plateforme · 9 domaines métier · multi-tenant
             </p>
-            <!-- Features preview -->
-            <ul class="flex flex-col gap-1.5 mb-5">
+
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Plateforme de campus virtuel pour les établissements d'Afrique francophone. Microservices Go orchestrés autour d'un hub multi-tenant — cours, classes virtuelles, finances, IA conversationnelle.
+            </p>
+
+            <!-- Architect-style feature ledger -->
+            <ul class="flex flex-col mb-6 border-t border-slate-800/80">
               <li
-                v-for="feat in bestProject.features.slice(0, 3)"
+                v-for="(feat, idx) in bestProject.features.slice(0, 3)"
                 :key="feat"
-                class="flex items-start gap-2 text-xs text-slate-500"
+                class="flex items-start gap-3 py-2.5 border-b border-slate-800/80 text-xs"
               >
-                <Icon name="material-symbols:check-small" size="14" class="text-emerald-500 flex-shrink-0 mt-0.5" />
-                {{ feat }}
+                <span class="font-mono text-[10px] text-emerald-500/60 pt-0.5 w-8 flex-shrink-0">
+                  0{{ idx + 1 }}
+                </span>
+                <span class="text-slate-400 leading-relaxed flex-1">{{ feat }}</span>
               </li>
             </ul>
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[10px] px-2.5 py-1 rounded-full font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20">
-                {{ bestProject.lang }}
-              </span>
-              <span
-                v-for="tag in bestProject.tags.filter(t => t !== bestProject.lang).slice(0, 6)"
-                :key="tag"
-                class="text-[10px] px-2.5 py-1 rounded-full bg-slate-800 text-slate-400 border border-slate-700"
+
+            <!-- Live URL footer -->
+            <div class="mt-auto pt-2 flex items-center justify-between gap-3 flex-wrap">
+              <a
+                v-if="bestProject.liveUrl"
+                :href="bestProject.liveUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                @click.stop
+                class="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 hover:text-emerald-300 transition-colors"
               >
-                {{ tag }}
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                {{ bestProject.liveUrl.replace(/^https?:\/\//, '') }}
+                <Icon name="material-symbols:arrow-outward" size="12" />
+              </a>
+              <span class="inline-flex items-center gap-1.5 text-xs text-slate-500 font-mono group-hover:text-emerald-400 transition-colors">
+                voir →
               </span>
             </div>
           </div>
 
-          <!-- Terminal -->
-          <div class="flex-shrink-0 w-64 bg-slate-900 rounded-xl p-4 font-mono text-[11px] border border-slate-700 self-start">
-            <div class="flex items-center gap-1.5 mb-3 pb-2 border-b border-slate-700">
-              <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-              <span class="ml-1 text-slate-500 text-[9px]">amigo.go</span>
-            </div>
-            <p><span class="text-purple-400">package</span> <span class="text-slate-300">amigo</span></p>
-            <p class="mt-2"><span class="text-purple-400">func</span> <span class="text-yellow-300">Brief</span><span class="text-slate-500">(</span>ctx Context<span class="text-slate-500">) {</span></p>
-            <p class="pl-3"><span class="text-slate-300">tools</span> <span class="text-slate-500">:=</span> <span class="text-yellow-300">RoleTools</span><span class="text-slate-500">(</span>ctx<span class="text-slate-500">.</span>Role<span class="text-slate-500">)</span></p>
-            <p class="pl-3"><span class="text-blue-400">return</span> llm<span class="text-slate-500">.</span><span class="text-yellow-300">Stream</span><span class="text-slate-500">(</span>tools<span class="text-slate-500">)</span></p>
-            <p><span class="text-slate-500">}</span></p>
-            <p class="mt-3 text-slate-500">// 22 services · NATS · LiveKit</p>
-            <span class="text-emerald-400 animate-pulse">▋</span>
+          <!-- Diagram — right column -->
+          <div class="lg:col-span-3 p-5 lg:p-6 bg-slate-950">
+            <AtomSystemDiagram
+              :modules="ecampusModules"
+              hub-letter="e"
+              hub-label="Plateforme · Tenant"
+              hub-meta="ISOLATION · BRANDING · DROITS"
+              meta-right="9 modules · 1 tenant"
+              eyebrow="ecampus / SI"
+              hub-color="#3b82f6"
+              accent-color="#10b981"
+            />
           </div>
-        </div>
-
-        <!-- Footer bar -->
-        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between flex-wrap gap-3">
-          <a
-            v-if="bestProject.liveUrl"
-            :href="bestProject.liveUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            @click.stop
-            class="inline-flex items-center gap-2 text-xs text-emerald-400 font-mono hover:text-emerald-300 transition-colors"
-          >
-            <Icon name="material-symbols:public" size="13" />
-            {{ bestProject.liveUrl.replace(/^https?:\/\//, '') }}
-            <Icon name="material-symbols:arrow-outward" size="11" />
-          </a>
-          <span class="inline-flex items-center gap-1.5 text-xs text-emerald-400 font-semibold group-hover:gap-2.5 transition-all">
-            Voir le projet
-            <Icon name="material-symbols:arrow-outward" size="13" />
-          </span>
         </div>
       </NuxtLink>
 
-      <!-- ── Flagship project ── -->
+      <!-- ── Flagship project (PharmOS) ── -->
       <NuxtLink
         :to="`/projects/${flagship.slug}`"
         v-motion="{
@@ -164,76 +181,71 @@ const categoryStats = [
           visibleOnce: { opacity: 1, y: 0 },
           delay: 60,
         }"
-        class="group block w-full mb-5 rounded-2xl border border-slate-800 bg-slate-950 p-7 hover:border-orange-500 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/5"
+        class="group block w-full mb-5 rounded-2xl border border-slate-800 bg-slate-950 hover:border-orange-500/60 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10 overflow-hidden"
       >
-        <div class="flex items-start justify-between gap-6 flex-wrap">
-          <div class="flex-1 min-w-0">
-            <!-- Label -->
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-orange-500/10 text-orange-400 border border-orange-500/20 mb-4">
-              <Icon name="material-symbols:rocket-launch" size="11" />
-              Projet Phare · {{ flagship.category }}
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-0">
+          <!-- Brief — left column -->
+          <div class="lg:col-span-2 p-7 border-b lg:border-b-0 lg:border-r border-slate-800 flex flex-col">
+            <!-- Eyebrow row -->
+            <div class="flex items-center justify-between mb-5">
+              <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">
+                002 · Projet phare
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full border border-orange-500/30 bg-orange-500/5 font-mono text-[9px] uppercase tracking-widest text-orange-400">
+                MVP · Phase 1
+              </span>
             </div>
-            <h3 class="text-2xl font-[900] text-white mb-2 group-hover:text-orange-400 transition-colors">
+
+            <h3 class="text-3xl font-[900] text-white mb-1 leading-none group-hover:text-orange-400 transition-colors">
               {{ flagship.title }}
             </h3>
-            <p class="text-slate-400 text-sm leading-relaxed max-w-2xl mb-5">
-              {{ flagship.longDescription }}
+            <p class="font-mono text-[11px] text-slate-500 mb-5 tracking-wide">
+              Monolithe modulaire · 9 modules · multi-officines
             </p>
-            <!-- Features preview -->
-            <ul class="flex flex-col gap-1.5 mb-5">
+
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Plateforme logicielle pour officines pharmaceutiques au Sénégal et en zone UEMOA. POS cloud-first, traçabilité GS1, tiers payant CMU/IPM, comptabilité SYSCOHADA conforme OHADA.
+            </p>
+
+            <!-- Architect-style feature ledger -->
+            <ul class="flex flex-col mb-6 border-t border-slate-800/80">
               <li
-                v-for="feat in flagship.features.slice(0, 3)"
+                v-for="(feat, idx) in flagship.features.slice(0, 3)"
                 :key="feat"
-                class="flex items-start gap-2 text-xs text-slate-500"
+                class="flex items-start gap-3 py-2.5 border-b border-slate-800/80 text-xs"
               >
-                <Icon name="material-symbols:check-small" size="14" class="text-orange-500 flex-shrink-0 mt-0.5" />
-                {{ feat }}
+                <span class="font-mono text-[10px] text-orange-500/60 pt-0.5 w-8 flex-shrink-0">
+                  0{{ idx + 1 }}
+                </span>
+                <span class="text-slate-400 leading-relaxed flex-1">{{ feat }}</span>
               </li>
             </ul>
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[10px] px-2.5 py-1 rounded-full font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20">
-                {{ flagship.lang }}
+
+            <!-- Footer -->
+            <div class="mt-auto pt-2 flex items-center justify-between gap-3 flex-wrap">
+              <span class="inline-flex items-center gap-1.5 text-xs font-mono text-slate-500">
+                <Icon name="material-symbols:lock" size="11" />
+                projet propriétaire
               </span>
-              <span
-                v-for="tag in flagship.tags.filter(t => t !== flagship.lang).slice(0, 6)"
-                :key="tag"
-                class="text-[10px] px-2.5 py-1 rounded-full bg-slate-800 text-slate-400 border border-slate-700"
-              >
-                {{ tag }}
+              <span class="inline-flex items-center gap-1.5 text-xs text-slate-500 font-mono group-hover:text-orange-400 transition-colors">
+                voir →
               </span>
             </div>
           </div>
 
-          <!-- Terminal -->
-          <div class="flex-shrink-0 w-64 bg-slate-900 rounded-xl p-4 font-mono text-[11px] border border-slate-700 self-start">
-            <div class="flex items-center gap-1.5 mb-3 pb-2 border-b border-slate-700">
-              <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-              <span class="ml-1 text-slate-500 text-[9px]">pos/dispense.go</span>
-            </div>
-            <p><span class="text-purple-400">package</span> <span class="text-slate-300">pos</span></p>
-            <p class="mt-2"><span class="text-purple-400">func</span> <span class="text-yellow-300">Dispense</span><span class="text-slate-500">(</span>cip GS1<span class="text-slate-500">) {</span></p>
-            <p class="pl-3">stock<span class="text-slate-500">.</span><span class="text-yellow-300">FEFO</span><span class="text-slate-500">(</span>cip<span class="text-slate-500">)</span></p>
-            <p class="pl-3">cmu<span class="text-slate-500">.</span><span class="text-yellow-300">Claim</span><span class="text-slate-500">(</span>patient<span class="text-slate-500">)</span></p>
-            <p class="pl-3">syscohada<span class="text-slate-500">.</span><span class="text-yellow-300">Post</span><span class="text-slate-500">()</span></p>
-            <p><span class="text-slate-500">}</span></p>
-            <p class="mt-3 text-slate-500">// monolithe modulaire · NATS</p>
-            <span class="text-orange-400 animate-pulse">▋</span>
+          <!-- Diagram — right column -->
+          <div class="lg:col-span-3 p-5 lg:p-6 bg-slate-950">
+            <AtomSystemDiagram
+              :modules="pharmosModules"
+              hub-letter="P"
+              hub-label="Officine · Tenant"
+              hub-meta="ROW-LEVEL · MULTI-MEMBERSHIP"
+              meta-right="9 modules · NATS bus"
+              eyebrow="pharmos / SI"
+              hub-color="#f97316"
+              accent-color="#fb923c"
+            />
           </div>
-        </div>
-
-        <!-- Footer bar -->
-        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <Icon name="material-symbols:lock" size="13" class="text-slate-500" />
-            <span class="text-xs text-slate-500 font-mono">{{ flagship.private ? 'projet propriétaire' : `aniasse/${flagship.repo}` }}</span>
-          </div>
-          <span class="inline-flex items-center gap-1.5 text-xs text-orange-400 font-semibold group-hover:gap-2.5 transition-all">
-            Voir le projet
-            <Icon name="material-symbols:arrow-outward" size="13" />
-          </span>
         </div>
       </NuxtLink>
 
