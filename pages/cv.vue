@@ -155,7 +155,7 @@ const handlePrint = () => window.print()
           </div>
           <div class="cv-skill-row">
             <span class="cv-skill-label">Sécurité</span>
-            <span class="cv-skill-value">OAuth2/JWT, TLS/SSL, OWASP Top 10, Pentest, Cryptographie, CSRF/XSS</span>
+            <span class="cv-skill-value">OAuth2/JWT, TLS/SSL, Cryptographie, CSRF/XSS</span>
           </div>
           <div class="cv-skill-row">
             <span class="cv-skill-label">Réseau</span>
