@@ -2,14 +2,18 @@
 defineProps<{
   category: string
   size?: 'xs' | 'sm' | 'lg'
+  cover?: string
 }>()
 </script>
 
 <template>
   <div class="w-full overflow-hidden" :class="size === 'lg' ? 'h-56' : size === 'xs' ? 'h-20' : 'h-36'">
 
+    <!-- ─── Cover image (si fournie) ─── -->
+    <img v-if="cover" :src="cover" :alt="category" loading="lazy" class="w-full h-full object-cover" />
+
     <!-- ─── Sécurité & IA ─── -->
-    <svg v-if="category === 'Sécurité & IA'" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="w-full h-full">
+    <svg v-else-if="category === 'Sécurité & IA'" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="w-full h-full">
       <defs>
         <linearGradient id="sec-bg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stop-color="#0f0a14"/>
@@ -404,6 +408,100 @@ defineProps<{
         <text x="10" y="171" font-family="monospace" font-size="8" fill="#a78bfa" fill-opacity="0.8">exec()</text>
       </g>
       <text x="200" y="210" font-family="monospace" font-size="8" fill="#475569" fill-opacity="0.6">Go · Unix · Syscalls · CLI</text>
+    </svg>
+
+    <!-- ─── HPC & IA ─── -->
+    <svg v-else-if="category === 'HPC & IA'" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="w-full h-full">
+      <defs>
+        <linearGradient id="hpc-bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#0a0a1a"/>
+          <stop offset="100%" stop-color="#0f0a24"/>
+        </linearGradient>
+        <radialGradient id="hpc-glow" cx="50%" cy="45%" r="55%">
+          <stop offset="0%" stop-color="#6366f1" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="600" height="220" fill="url(#hpc-bg)"/>
+      <rect width="600" height="220" fill="url(#hpc-glow)"/>
+      <!-- grid -->
+      <g stroke="#ffffff" stroke-opacity="0.035" stroke-width="1">
+        <line x1="0" y1="44" x2="600" y2="44"/><line x1="0" y1="88" x2="600" y2="88"/>
+        <line x1="0" y1="132" x2="600" y2="132"/><line x1="0" y1="176" x2="600" y2="176"/>
+        <line x1="120" y1="0" x2="120" y2="220"/><line x1="240" y1="0" x2="240" y2="220"/>
+        <line x1="360" y1="0" x2="360" y2="220"/><line x1="480" y1="0" x2="480" y2="220"/>
+      </g>
+
+      <!-- CPU chip (left) -->
+      <g transform="translate(48, 66)">
+        <rect x="0" y="0" width="66" height="66" rx="6" fill="#6366f1" fill-opacity="0.08" stroke="#6366f1" stroke-width="1.5" stroke-opacity="0.6"/>
+        <rect x="16" y="16" width="34" height="34" rx="3" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-width="1" stroke-opacity="0.5"/>
+        <text x="24" y="37" font-family="monospace" font-size="9" fill="#a5b4fc" fill-opacity="0.9">CPU</text>
+        <!-- pins -->
+        <g stroke="#6366f1" stroke-opacity="0.5" stroke-width="2">
+          <line x1="14" y1="0" x2="14" y2="-7"/><line x1="33" y1="0" x2="33" y2="-7"/><line x1="52" y1="0" x2="52" y2="-7"/>
+          <line x1="14" y1="66" x2="14" y2="73"/><line x1="33" y1="66" x2="33" y2="73"/><line x1="52" y1="66" x2="52" y2="73"/>
+          <line x1="0" y1="16" x2="-7" y2="16"/><line x1="0" y1="33" x2="-7" y2="33"/><line x1="0" y1="50" x2="-7" y2="50"/>
+        </g>
+      </g>
+      <text x="52" y="156" font-family="monospace" font-size="7" fill="#818cf8" fill-opacity="0.6">OpenMP · 4 cores</text>
+
+      <!-- GPU card (right) -->
+      <g transform="translate(468, 60)">
+        <rect x="0" y="0" width="84" height="78" rx="6" fill="#8b5cf6" fill-opacity="0.08" stroke="#8b5cf6" stroke-width="1.5" stroke-opacity="0.6"/>
+        <g fill="#8b5cf6" fill-opacity="0.18" stroke="#8b5cf6" stroke-opacity="0.4" stroke-width="0.8">
+          <rect x="8" y="10" width="30" height="26" rx="2"/><rect x="46" y="10" width="30" height="26" rx="2"/>
+          <rect x="8" y="42" width="30" height="26" rx="2"/><rect x="46" y="42" width="30" height="26" rx="2"/>
+        </g>
+        <text x="26" y="27" font-family="monospace" font-size="9" fill="#c4b5fd" fill-opacity="0.9">GPU</text>
+      </g>
+      <text x="470" y="156" font-family="monospace" font-size="7" fill="#a78bfa" fill-opacity="0.6">CUDA · SIMT</text>
+
+      <!-- Throughput bars (center) — CPU vs GPU benchmark -->
+      <g transform="translate(210, 40)">
+        <text x="0" y="-6" font-family="monospace" font-size="8" fill="#818cf8" fill-opacity="0.6">throughput · img/s</text>
+        <!-- baseline -->
+        <line x1="0" y1="96" x2="180" y2="96" stroke="#6366f1" stroke-opacity="0.25" stroke-width="1"/>
+        <rect x="8"  y="76" width="26" height="20" rx="2" fill="#6366f1" fill-opacity="0.45"/>
+        <rect x="46" y="54" width="26" height="42" rx="2" fill="#6366f1" fill-opacity="0.6"/>
+        <rect x="84" y="42" width="26" height="54" rx="2" fill="#818cf8" fill-opacity="0.7"/>
+        <rect x="138" y="6" width="30" height="90" rx="2" fill="#8b5cf6" fill-opacity="0.85"/>
+        <text x="8"   y="110" font-family="monospace" font-size="6.5" fill="#818cf8" fill-opacity="0.6">1c</text>
+        <text x="48"  y="110" font-family="monospace" font-size="6.5" fill="#818cf8" fill-opacity="0.6">2c</text>
+        <text x="86"  y="110" font-family="monospace" font-size="6.5" fill="#818cf8" fill-opacity="0.6">4c</text>
+        <text x="140" y="110" font-family="monospace" font-size="6.5" fill="#c4b5fd" fill-opacity="0.7">GPU</text>
+        <text x="130" y="2"  font-family="monospace" font-size="7" fill="#c4b5fd" fill-opacity="0.8">466</text>
+      </g>
+
+      <!-- Land-cover segmentation map (bottom-left) -->
+      <g transform="translate(150, 168)">
+        <text x="0" y="-4" font-family="monospace" font-size="7" fill="#6ee7b7" fill-opacity="0.55">land-cover · Sénégal</text>
+        <g stroke="#0f0a24" stroke-width="0.8">
+          <rect x="0"  y="0"  width="12" height="12" fill="#3b82f6" fill-opacity="0.7"/><rect x="12" y="0"  width="12" height="12" fill="#3b82f6" fill-opacity="0.7"/><rect x="24" y="0"  width="12" height="12" fill="#22c55e" fill-opacity="0.6"/><rect x="36" y="0"  width="12" height="12" fill="#eab308" fill-opacity="0.6"/><rect x="48" y="0"  width="12" height="12" fill="#eab308" fill-opacity="0.6"/>
+          <rect x="0"  y="12" width="12" height="12" fill="#3b82f6" fill-opacity="0.7"/><rect x="12" y="12" width="12" height="12" fill="#22c55e" fill-opacity="0.6"/><rect x="24" y="12" width="12" height="12" fill="#22c55e" fill-opacity="0.6"/><rect x="36" y="12" width="12" height="12" fill="#16a34a" fill-opacity="0.6"/><rect x="48" y="12" width="12" height="12" fill="#eab308" fill-opacity="0.6"/>
+          <rect x="0"  y="24" width="12" height="12" fill="#22c55e" fill-opacity="0.6"/><rect x="12" y="24" width="12" height="12" fill="#16a34a" fill-opacity="0.6"/><rect x="24" y="24" width="12" height="12" fill="#a16207" fill-opacity="0.6"/><rect x="36" y="24" width="12" height="12" fill="#a16207" fill-opacity="0.6"/><rect x="48" y="24" width="12" height="12" fill="#22c55e" fill-opacity="0.6"/>
+        </g>
+      </g>
+
+      <!-- Neural layers (bottom-right) -->
+      <g transform="translate(360, 172)">
+        <g fill="#8b5cf6" fill-opacity="0.55">
+          <circle cx="0" cy="0" r="3"/><circle cx="0" cy="14" r="3"/><circle cx="0" cy="28" r="3"/>
+          <circle cx="26" cy="7" r="3"/><circle cx="26" cy="21" r="3"/>
+          <circle cx="52" cy="0" r="3"/><circle cx="52" cy="14" r="3"/><circle cx="52" cy="28" r="3"/>
+        </g>
+        <g stroke="#8b5cf6" stroke-opacity="0.22" stroke-width="0.8">
+          <line x1="0" y1="0" x2="26" y2="7"/><line x1="0" y1="14" x2="26" y2="7"/><line x1="0" y1="28" x2="26" y2="21"/>
+          <line x1="26" y1="7" x2="52" y2="0"/><line x1="26" y1="7" x2="52" y2="14"/><line x1="26" y1="21" x2="52" y2="28"/>
+        </g>
+        <text x="66" y="18" font-family="monospace" font-size="7" fill="#c4b5fd" fill-opacity="0.55">U-Net</text>
+      </g>
+
+      <!-- flow arrow one-source → two-engines -->
+      <line x1="118" y1="99" x2="204" y2="88" stroke="#6366f1" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="396" y1="88" x2="466" y2="99" stroke="#8b5cf6" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="4,3"/>
+
+      <text x="212" y="214" font-family="monospace" font-size="8" fill="#818cf8" fill-opacity="0.35">Python · PyTorch · JAX · CUDA · HPC</text>
     </svg>
 
     <!-- ─── Apps & SaaS ─── -->

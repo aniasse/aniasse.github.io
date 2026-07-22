@@ -1,6 +1,15 @@
 <script setup lang="ts">
 const experiences = [
   {
+    period: 'Juin — Juillet 2026',
+    title: 'Gray Scott School 2026 — HPC',
+    subtitle: 'CINERI · EuroCC / ESCAPE',
+    description: 'Certification HPC (41 h) — programmation et optimisation sur architectures hétérogènes (CPU/GPU). Projet appliqué : SenLand, cartographie satellite du Sénégal benchmarkée CPU vs GPU.',
+    tags: ['HPC', 'CUDA', 'OpenMP', 'PyTorch', 'GPU'],
+    icon: 'material-symbols:memory',
+    color: 'bg-indigo-600',
+  },
+  {
     period: 'Avril 2026 — en cours',
     title: 'Tech Academy — Cloud Platform Security',
     subtitle: 'Alibaba Cloud · Dakar 2026',

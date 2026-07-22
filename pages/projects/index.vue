@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ALL_PROJECTS, CATEGORIES, useLangColor, useCategoryIcon, useCategoryAccent } from '~/composables/useProjects'
+import { VISIBLE_PROJECTS, CATEGORIES, useLangColor, useCategoryIcon, useCategoryAccent } from '~/composables/useProjects'
 import type { Category } from '~/composables/useProjects'
 
 definePageMeta({ layout: 'page' })
@@ -15,14 +15,14 @@ const activeCategory = ref<FilterCategory>('Tous')
 
 const filteredProjects = computed(() =>
   activeCategory.value === 'Tous'
-    ? ALL_PROJECTS
-    : ALL_PROJECTS.filter((p) => p.category === activeCategory.value),
+    ? VISIBLE_PROJECTS
+    : VISIBLE_PROJECTS.filter((p) => p.category === activeCategory.value),
 )
 
 const categoriesWithCount = computed(() =>
   CATEGORIES.map((c) => ({
     ...c,
-    count: c.label === 'Tous' ? ALL_PROJECTS.length : ALL_PROJECTS.filter((p) => p.category === c.label).length,
+    count: c.label === 'Tous' ? VISIBLE_PROJECTS.length : VISIBLE_PROJECTS.filter((p) => p.category === c.label).length,
   })),
 )
 </script>
@@ -60,7 +60,7 @@ const categoriesWithCount = computed(() =>
           }"
           class="text-slate-500 text-base max-w-xl leading-relaxed mb-8"
         >
-          {{ ALL_PROJECTS.length }} projets open source — du shell Unix aux architectures cloud distribuées,
+          {{ VISIBLE_PROJECTS.length }} projets open source — du shell Unix aux architectures cloud distribuées,
           en passant par les jeux réseau en Rust et les outils CLI en Go.
         </p>
         <div
@@ -130,13 +130,13 @@ const categoriesWithCount = computed(() =>
               </div>
               <h2 class="text-base font-bold text-slate-700">{{ cat.label }}</h2>
               <span class="text-xs text-slate-400 font-mono">
-                {{ ALL_PROJECTS.filter(p => p.category === cat.label).length }} projets
+                {{ VISIBLE_PROJECTS.filter(p => p.category === cat.label).length }} projets
               </span>
               <div class="flex-1 h-px bg-slate-100 ml-2"></div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <NuxtLink
-                v-for="(project, idx) in ALL_PROJECTS.filter(p => p.category === cat.label)"
+                v-for="(project, idx) in VISIBLE_PROJECTS.filter(p => p.category === cat.label)"
                 :key="project.slug"
                 :to="`/projects/${project.slug}`"
                 v-motion
@@ -145,7 +145,7 @@ const categoriesWithCount = computed(() =>
                 :delay="60 * idx"
                 class="group flex flex-col border border-slate-200 rounded-2xl bg-white overflow-hidden hover:border-orange-300 hover:shadow-md transition-all duration-200"
               >
-                <AtomProjectIllustration :category="project.category" size="sm" />
+                <AtomProjectIllustration :category="project.category" :cover="project.cover" size="sm" />
                 <div class="p-4 flex flex-col flex-1">
                   <div class="flex items-start justify-between mb-2">
                     <div class="flex items-center gap-1.5">
@@ -194,7 +194,7 @@ const categoriesWithCount = computed(() =>
               :delay="60 * idx"
               class="group flex flex-col border border-slate-200 rounded-2xl bg-white overflow-hidden hover:border-orange-300 hover:shadow-md transition-all duration-200"
             >
-              <AtomProjectIllustration :category="project.category" size="sm" />
+              <AtomProjectIllustration :category="project.category" :cover="project.cover" size="sm" />
               <div class="p-4 flex flex-col flex-1">
                 <div class="flex items-start justify-between mb-2">
                   <h3 class="text-sm font-bold text-slate-800 group-hover:text-orange-600 transition-colors leading-tight">

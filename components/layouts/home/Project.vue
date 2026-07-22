@@ -35,19 +35,20 @@ const pharmosModules = [
 
 // 6 projets mis en avant (variété de catégories + SaaS)
 const featured = [
-  'souhibou-telecom',
-  'jamah-pikine',
+  'sendland',
+  'thymus',
+  'vexobj',
   'vortex',
   'multiplayer-fps',
   'cloud-design',
-  'real-time-forum',
 ].map(slug => ALL_PROJECTS.find(p => p.slug === slug)!)
 
 // Stats par catégorie
 const categoryStats = [
-  { label: 'Apps & SaaS', count: 8, icon: 'material-symbols:rocket-launch', color: 'text-emerald-400' },
-  { label: 'Sécurité & IA', count: 1, icon: 'material-symbols:security', color: 'text-red-400' },
-  { label: 'DevOps & Cloud', count: 6, icon: 'material-symbols:cloud', color: 'text-purple-400' },
+  { label: 'Apps & SaaS', count: 5, icon: 'material-symbols:rocket-launch', color: 'text-emerald-400' },
+  { label: 'HPC & IA', count: 1, icon: 'material-symbols:memory', color: 'text-indigo-400' },
+  { label: 'Sécurité & IA', count: 2, icon: 'material-symbols:security', color: 'text-red-400' },
+  { label: 'DevOps & Cloud', count: 7, icon: 'material-symbols:cloud', color: 'text-purple-400' },
   { label: 'Systèmes Rust', count: 5, icon: 'mdi:language-rust', color: 'text-orange-400' },
   { label: 'Backend Go', count: 10, icon: 'file-icons:go', color: 'text-sky-400' },
   { label: 'Frontend JS', count: 4, icon: 'mdi:language-javascript', color: 'text-yellow-400' },
@@ -185,7 +186,7 @@ const categoryStats = [
           :delay="80 + 60 * idx"
           class="group flex flex-col border border-slate-200 rounded-2xl bg-white overflow-hidden hover:border-orange-300 hover:shadow-lg hover:shadow-orange-500/5 transition-all duration-200"
         >
-          <AtomProjectIllustration :category="project.category" size="sm" />
+          <AtomProjectIllustration :category="project.category" :cover="project.cover" size="sm" />
           <div class="p-4 flex flex-col flex-1">
             <!-- Header -->
             <div class="flex items-start justify-between mb-2">

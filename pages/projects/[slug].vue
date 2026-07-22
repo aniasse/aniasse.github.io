@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ALL_PROJECTS, useLangColor, useCategoryIcon, useCategoryAccent } from '~/composables/useProjects'
+import { ALL_PROJECTS, VISIBLE_PROJECTS, useLangColor, useCategoryIcon, useCategoryAccent } from '~/composables/useProjects'
 
 definePageMeta({ layout: 'page' })
 
@@ -18,7 +18,7 @@ useHead({
 })
 
 // Projets de la même catégorie (excl. courant)
-const relatedProjects = ALL_PROJECTS
+const relatedProjects = VISIBLE_PROJECTS
   .filter((p) => p.category === project.category && p.slug !== project.slug)
   .slice(0, 3)
 </script>
@@ -27,8 +27,8 @@ const relatedProjects = ALL_PROJECTS
   <div class="flex flex-col w-full items-center pb-24 bg-white">
 
     <!-- Illustration banner -->
-    <div class="w-full">
-      <AtomProjectIllustration :category="project.category" size="lg" />
+    <div class="w-full pt-20 md:pt-24">
+      <AtomProjectIllustration :category="project.category" :cover="project.cover" size="lg" />
     </div>
 
     <!-- Hero / Header -->
@@ -202,6 +202,26 @@ const relatedProjects = ALL_PROJECTS
                 <span class="text-sm text-slate-600 leading-relaxed">{{ feature }}</span>
               </li>
             </ul>
+          </div>
+
+          <!-- Video demo -->
+          <div
+            v-if="project.video"
+            v-motion
+            :initial="{ opacity: 0, y: 24 }"
+            :visibleOnce="{ opacity: 1, y: 0 }"
+            :delay="120"
+          >
+            <h2 class="text-lg font-bold text-slate-800 mb-4">Démo</h2>
+            <video
+              :src="project.video"
+              :poster="project.cover"
+              controls
+              loop
+              playsinline
+              preload="metadata"
+              class="w-full rounded-2xl border border-slate-200 bg-slate-950 shadow-sm"
+            />
           </div>
 
           <!-- Terminal mockup -->
@@ -393,7 +413,7 @@ const relatedProjects = ALL_PROJECTS
                 :to="`/projects/${rel.slug}`"
                 class="group flex flex-col border border-slate-200 rounded-xl bg-white overflow-hidden hover:border-orange-300 hover:shadow-sm transition-all"
               >
-                <AtomProjectIllustration :category="rel.category" size="xs" />
+                <AtomProjectIllustration :category="rel.category" :cover="rel.cover" size="xs" />
                 <div class="p-3 flex items-center gap-2">
                   <div class="flex-1 min-w-0">
                     <p class="text-xs font-bold text-slate-700 group-hover:text-orange-600 transition-colors truncate">{{ rel.title }}</p>

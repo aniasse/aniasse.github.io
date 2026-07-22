@@ -32,6 +32,12 @@ const skills = [
     items: ['Docker', 'Kubernetes', 'Terraform', 'Ansible', 'Jenkins', 'NGINX', 'CI/CD', 'AWS', 'Vercel'],
   },
   {
+    category: 'HPC & IA',
+    icon: 'material-symbols:memory',
+    color: 'bg-indigo-100 text-indigo-700',
+    items: ['CUDA / GPU', 'OpenMP', 'PyTorch', 'JAX / Flax', 'Slurm', 'Benchmarking', 'Deep Learning', 'Geospatial'],
+  },
+  {
     category: 'Sécurité',
     icon: 'material-symbols:security',
     color: 'bg-red-100 text-red-700',
@@ -77,6 +83,14 @@ const experiences = [
 
 const education = [
   {
+    period: 'Juin — Juillet 2026',
+    title: 'Gray Scott School 2026 — High Performance Computing',
+    place: 'CINERI (site satellite) · LAPP & CC-FR — EuroCC / ESCAPE',
+    description: 'École d\'été HPC (41 h, en anglais) : programmation et optimisation sur architectures hétérogènes (CPU multi-cœurs, GPU/CUDA, mémoire, benchmarking). Projet appliqué : SenLand.',
+    icon: 'material-symbols:memory',
+    color: 'bg-indigo-600',
+  },
+  {
     period: 'Avril 2026 — en cours',
     title: 'Tech Academy — Cloud Platform Security',
     place: 'Alibaba Cloud · Dakar 2026 (en anglais)',
@@ -118,7 +132,14 @@ const education = [
   },
 ]
 
-const certifications = [
+const certifications: { name: string; issuer: string; icon: string; color: string; url?: string }[] = [
+  {
+    name: 'Gray Scott School 2026 — HPC on Heterogeneous Architectures',
+    issuer: 'CINERI · LAPP & CC-FR (EuroCC / ESCAPE) · 41 h',
+    icon: 'material-symbols:memory',
+    color: 'bg-indigo-100 text-indigo-700',
+    url: '/gray-scott-school-2026-certificate.pdf',
+  },
   {
     name: 'CCNA 1 — Introduction to Networks',
     issuer: 'Cisco',
@@ -183,7 +204,8 @@ const tools = [
           <p class="text-slate-600 text-base leading-relaxed mb-4">
             Issu d'une formation en <strong>ingénierie télécom</strong> (ESTM) et titulaire d'une <strong>licence pro en administration et sécurité des réseaux</strong> (ESMT Dakar),
             j'ai ensuite intégré <strong>01Talent Sénégal</strong> où j'ai développé pendant 3 ans des systèmes distribués, des architectures cloud et des applications full stack.
-            Certifié <strong>Cisco CCNA</strong>, <strong>Oracle Database@AWS Architect</strong> et <strong>OCI Generative AI Professional</strong>.
+            Récemment certifié <strong>HPC</strong> à la <strong>Gray Scott School 2026</strong> (calcul sur architectures hétérogènes CPU/GPU).
+            Également certifié <strong>Cisco CCNA</strong>, <strong>Oracle Database@AWS Architect</strong> et <strong>OCI Generative AI Professional</strong>.
           </p>
           <p class="text-slate-500 text-sm leading-relaxed">
             Ma philosophie : écrire du code propre, sécurisé et qui tient à l'échelle.
@@ -416,6 +438,16 @@ const tools = [
             <div class="flex-1 min-w-0">
               <h3 class="text-sm font-bold text-slate-800 leading-tight">{{ cert.name }}</h3>
               <p class="text-xs text-slate-400 mt-1">{{ cert.issuer }}</p>
+              <a
+                v-if="cert.url"
+                :href="cert.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 mt-2 text-xs font-semibold text-indigo-600 hover:text-indigo-700 transition-colors"
+              >
+                Voir le certificat
+                <Icon name="material-symbols:arrow-outward" size="12" />
+              </a>
             </div>
             <Icon name="material-symbols:verified" size="18" class="text-orange-400 flex-shrink-0 mt-0.5" />
           </div>

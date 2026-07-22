@@ -1,4 +1,4 @@
-export type Category = 'Sécurité & IA' | 'DevOps & Cloud' | 'Systèmes & Réseau' | 'Web & Backend' | 'Frontend & JS' | 'CLI & Outils' | 'Apps & SaaS'
+export type Category = 'HPC & IA' | 'Sécurité & IA' | 'DevOps & Cloud' | 'Systèmes & Réseau' | 'Web & Backend' | 'Frontend & JS' | 'CLI & Outils' | 'Apps & SaaS'
 
 export interface Project {
   slug: string
@@ -12,9 +12,34 @@ export interface Project {
   category: Category
   private?: boolean
   liveUrl?: string
+  hidden?: boolean
+  cover?: string
+  video?: string
 }
 
 export const ALL_PROJECTS: Project[] = [
+  // ───── HPC & IA ─────
+  {
+    slug: 'sendland',
+    title: 'SenLand',
+    repo: 'senland',
+    lang: 'Python',
+    description: 'Cartographie de l\'occupation des sols du Sénégal par deep learning — un même code exécuté sur CPU et GPU pour comparer honnêtement les deux moteurs de calcul.',
+    longDescription: 'SenLand est le volet appliqué de la Gray Scott School (CINERI / EuroCC) : un pipeline de deep learning qui cartographie l\'occupation des sols (eau, cultures, forêt, bâti, mangroves…) à partir d\'imagerie satellite ouverte, et qui exécute le même code source sur CPU et sur GPU pour comparer les deux moteurs de calcul de façon rigoureuse. Développé de bout en bout sur un simple laptop (Intel i5-10300H, GTX 1650). Le projet couvre la classification (EuroSAT, 91,8 % de précision), la segmentation sémantique sur 4 zones du Sénégal (mIoU 0,62 avec un encodeur ResNet-34 pré-entraîné ImageNet), un benchmark à charge fixe (strong scaling CPU 1→4 cœurs : 54→117 img/s, GPU : 466 img/s) et un portage complet en JAX/Flax pour comparer non plus seulement les moteurs mais les frameworks (PyTorch vs JAX, jit/fusion, torch.compile). Toutes les figures et métriques sont reproductibles et versionnées.',
+    features: [
+      'Un seul code source, deux moteurs : CPU (OpenMP, strong scaling 1→4 cœurs) et GPU (SIMT/CUDA)',
+      'Classification EuroSAT (10 classes, from scratch) — 91,8 % de précision de validation',
+      'Segmentation sémantique de 4 zones du Sénégal (U-Net ResNet-34) — mIoU 0,62, spatial holdout',
+      'Benchmark à charge fixe : CPU 54→117 img/s (1→4 threads), GPU 466 img/s',
+      'Portage JAX/Flax (jit, fusion lax.fori_loop, donate_argnums) pour comparer frameworks à modèle identique',
+      'Données ouvertes (ESA WorldCover, Sentinel-2 cloudless), runs reproductibles, scaffolding Slurm/Apptainer',
+    ],
+    tags: ['Python', 'PyTorch', 'JAX', 'CUDA', 'OpenMP', 'HPC', 'Deep Learning', 'Geospatial', 'Benchmark'],
+    category: 'HPC & IA',
+    cover: '/images/projects/senland.jpg',
+    video: '/images/projects/senland-song.mp4',
+  },
+
   // ───── Sécurité & IA ─────
   {
     slug: 'secure-shield',
@@ -33,8 +58,44 @@ export const ALL_PROJECTS: Project[] = [
     tags: ['TypeScript', 'AI Agent', 'SOC', 'Security', 'Real-time'],
     category: 'Sécurité & IA',
   },
+  {
+    slug: 'thymus',
+    title: 'Thymus',
+    repo: 'thymus',
+    lang: 'Rust',
+    description: 'Système immunitaire pour réseau : détection comportementale des menaces sans signatures — apprend le « Soi » du réseau et repère toute mutation anormale.',
+    longDescription: 'Thymus est une plateforme de cybersécurité en Rust qui traite un réseau informatique comme un organisme vivant. Au lieu de chercher des attaques connues (signatures), elle construit l\'identité comportementale du réseau — son « Soi » — sur trois dimensions (technique, relationnelle, temporelle), puis détecte toute mutation anormale. L\'architecture combine un Core central (analyse, cartographie, dashboard HTMX) et des Sensors déployés sur chaque machine, en mode hôte (agent lisant /proc/net sur Linux ou ETW sur Windows) ou en mode passif sans agent (un seul capteur sur un port miroir SPAN profile tout le réseau, y compris imprimantes, caméras IP et IoT, par métadonnées de flux uniquement). Le moteur immunitaire superpose une couche innée (règles universelles) et une couche adaptative (règles apprises), avec mémoire immunitaire, tolérances (faux positifs) et détection des chaînes de déplacement latéral.',
+    features: [
+      'ADN comportemental par machine (technique · relationnel · temporel) — détection sans signatures',
+      'Immunité innée + adaptative avec mémoire immunitaire et scoring des mutations',
+      'Mode passif sans agent : un capteur sur port SPAN profile tout le réseau (IoT, caméras, imprimantes)',
+      'Détection des chaînes de déplacement latéral et cartographie réseau temps réel',
+      'Core Rust + dashboard HTMX (zéro build JS), API REST, alerting webhook, agent Windows (ETW) en CI',
+    ],
+    tags: ['Rust', 'Cybersecurity', 'Anomaly Detection', 'Network', 'Behavioral', 'HTMX'],
+    category: 'Sécurité & IA',
+    cover: '/images/projects/thymus.png',
+  },
 
   // ───── DevOps & Cloud ─────
+  {
+    slug: 'vexobj',
+    title: 'VexObj',
+    repo: 'vexobj',
+    lang: 'Rust',
+    description: 'Stockage objet S3-compatible auto-hébergé, avec traitement média, chiffrement au repos et réplication — le tout dans un seul binaire Rust de ~14 Mo.',
+    longDescription: 'VexObj est une plateforme de stockage objet auto-hébergée livrée en un unique binaire Rust de ~14 Mo. Elle expose à la fois une API REST native (/v1/*) et une API S3-compatible (/s3/*) avec vérification réelle des signatures AWS Signature V4 — n\'importe quel client S3 (aws-sdk, boto3, mc, rclone) s\'y connecte sans modification. Là où MinIO/Garage ne font que du stockage pur, VexObj intègre dans le même processus le traitement média : transformations d\'images à la volée (resize/crop, négociation automatique AVIF/WebP/JPEG), extraction de métadonnées vidéo et génération de vignettes via ffmpeg, avec cache multi-niveaux (LRU mémoire + disque). Côté stockage : versioning, object lock WORM (rétention + legal hold), règles de cycle de vie, déduplication par contenu, chiffrement AES-256-GCM au repos et réplication asynchrone primaire→réplica. Les blobs vivent sur disque local ou délèguent à n\'importe quel backend S3 (R2, B2, Wasabi, MinIO). Ciblé en priorité pour les instances du fediverse (Mastodon, PeerTube, Pixelfed). SDKs officiels TypeScript, Python et Go.',
+    features: [
+      'API S3-compatible avec vérification réelle AWS SigV4 — compatible aws-sdk, boto3, rclone, mc',
+      'Traitement média intégré : transforms d\'images à la volée (AVIF/WebP), vignettes vidéo ffmpeg',
+      'Versioning, object lock WORM (rétention + legal hold), lifecycle et déduplication par contenu',
+      'Chiffrement AES-256-GCM au repos (~1,25 Go/s) et réplication asynchrone primaire→réplica',
+      'Un seul binaire ~14 Mo, métadonnées SQLite, backend blob pluggable (R2, B2, MinIO) — SDKs TS/Python/Go',
+    ],
+    tags: ['Rust', 'S3', 'Object Storage', 'AWS SigV4', 'Media Processing', 'Self-hosted', 'SQLite'],
+    category: 'DevOps & Cloud',
+    cover: '/images/projects/vexobj.svg',
+  },
   {
     slug: 'cloud-design',
     title: 'Cloud-Design',
@@ -689,6 +750,7 @@ export const ALL_PROJECTS: Project[] = [
     tags: ['Next.js', 'Go', 'CinetPay', 'E-commerce', 'CRM', 'Mobile'],
     category: 'Apps & SaaS',
     private: true,
+    hidden: true,
   },
   {
     slug: 'levelofficiel',
@@ -725,6 +787,7 @@ export const ALL_PROJECTS: Project[] = [
     tags: ['Nuxt', 'React Native', 'Capacitor', 'Supabase', 'S3', 'Audio'],
     category: 'Apps & SaaS',
     private: true,
+    hidden: true,
   },
   {
     slug: 'vortex',
@@ -779,12 +842,17 @@ export const ALL_PROJECTS: Project[] = [
     tags: ['Nuxt', 'Capacitor', 'Android', 'Firebase', 'Supabase', 'S3'],
     category: 'Apps & SaaS',
     private: true,
+    hidden: true,
   },
 ]
+
+// Projets affichés dans les listings (exclut les projets masqués)
+export const VISIBLE_PROJECTS: Project[] = ALL_PROJECTS.filter((p) => !p.hidden)
 
 export const CATEGORIES = [
   { label: 'Tous' as const, icon: 'material-symbols:grid-view' },
   { label: 'Apps & SaaS' as Category, icon: 'material-symbols:rocket-launch' },
+  { label: 'HPC & IA' as Category, icon: 'material-symbols:memory' },
   { label: 'Sécurité & IA' as Category, icon: 'material-symbols:security' },
   { label: 'DevOps & Cloud' as Category, icon: 'material-symbols:cloud' },
   { label: 'Systèmes & Réseau' as Category, icon: 'mdi:language-rust' },
@@ -810,6 +878,7 @@ export function useLangColor(lang: string): string {
 
 export function useCategoryIcon(cat: string): string {
   const map: Record<string, string> = {
+    'HPC & IA': 'material-symbols:memory',
     'Sécurité & IA': 'material-symbols:security',
     'DevOps & Cloud': 'material-symbols:cloud',
     'Systèmes & Réseau': 'mdi:language-rust',
@@ -823,6 +892,7 @@ export function useCategoryIcon(cat: string): string {
 
 export function useCategoryAccent(cat: string): string {
   const map: Record<string, string> = {
+    'HPC & IA': 'bg-indigo-50 text-indigo-600',
     'Sécurité & IA': 'bg-red-50 text-red-600',
     'DevOps & Cloud': 'bg-purple-50 text-purple-600',
     'Systèmes & Réseau': 'bg-orange-50 text-orange-600',

@@ -73,7 +73,7 @@ const handlePrint = () => window.print()
           70+ projets réalisés à 01Talent/Zone01 Dakar — du shell Unix aux architectures cloud, spécialisation Cloud & DevOps.
           Freelance en parallèle : écosystèmes e-commerce, apps communautaires web + mobile pour des clients au Sénégal.
           Formation en ingénierie télécom (ESTM) et administration réseau (ESMT Dakar).
-          Certifié Cisco CCNA (1-2-3), Oracle Database@AWS Architect et OCI Generative AI Professional.
+          Certifié HPC (Gray Scott School 2026 — calcul CPU/GPU), Cisco CCNA (1-2-3), Oracle Database@AWS Architect et OCI Generative AI Professional.
         </p>
       </section>
 
@@ -154,6 +154,10 @@ const handlePrint = () => window.print()
             <span class="cv-skill-value">Docker, Kubernetes, Terraform, Ansible, Jenkins, NGINX, CI/CD, AWS (ECS, S3), Vercel</span>
           </div>
           <div class="cv-skill-row">
+            <span class="cv-skill-label">HPC & IA</span>
+            <span class="cv-skill-value">CUDA/GPU, OpenMP, PyTorch, JAX/Flax, Slurm, Deep Learning, Geospatial, Benchmarking CPU/GPU</span>
+          </div>
+          <div class="cv-skill-row">
             <span class="cv-skill-label">Sécurité</span>
             <span class="cv-skill-value">OAuth2/JWT, TLS/SSL, Cryptographie, CSRF/XSS</span>
           </div>
@@ -177,6 +181,9 @@ const handlePrint = () => window.print()
         <ul class="cv-list">
           <li><strong>eCampus</strong> — Plateforme de campus virtuel multi-tenant pour l'Afrique francophone : 22+ microservices Go, classes virtuelles LiveKit, IA conversationnelle, mobile money. En production sur ecampus-sn.com</li>
           <li><strong>PharmOS</strong> — Plateforme logicielle pour officines pharmaceutiques (Sénégal/UEMOA) : POS cloud-first, traçabilité GS1, tiers payant CMU/IPM, comptabilité SYSCOHADA</li>
+          <li><strong>SenLand</strong> (HPC · Gray Scott School) — Cartographie de l'occupation des sols du Sénégal par deep learning ; un même code CPU vs GPU (PyTorch/JAX), benchmark strong-scaling, segmentation mIoU 0,62</li>
+          <li><strong>VexObj</strong> (Open Source · Rust) — Stockage objet S3-compatible auto-hébergé (SigV4 réel), traitement média à la volée, chiffrement AES-256 et réplication, dans un seul binaire ~14 Mo</li>
+          <li><strong>Thymus</strong> (Open Source · Rust) — « Système immunitaire » réseau : détection comportementale des menaces sans signatures, mode passif SPAN sans agent, Core + Sensors</li>
           <li><strong>Souhibou Télécom</strong> (Freelance) — Écosystème e-commerce high-tech : plateforme Next.js, dashboard CRM admin, app mobile, API Go, paiement CinetPay</li>
           <li><strong>Jamah Pikine</strong> (Freelance) — Écosystème communautaire : plateforme web + dashboard admin + apps mobiles (React Native, Capacitor), streaming audio, Supabase, AWS S3</li>
           <li><strong>Secure-Shield</strong> (Open Source) — Plateforme SOC avec agent IA pour détection d'incidents en temps réel (TypeScript)</li>
@@ -191,6 +198,10 @@ const handlePrint = () => window.print()
       <section class="cv-section">
         <h2 class="cv-section-title">Certifications</h2>
         <div class="cv-certs-grid">
+          <div class="cv-cert">
+            <span class="cv-cert-name">Gray Scott School 2026 — HPC on Heterogeneous Architectures (41 h)</span>
+            <span class="cv-cert-issuer">CINERI · LAPP & CC-FR (EuroCC / ESCAPE)</span>
+          </div>
           <div class="cv-cert">
             <span class="cv-cert-name">CCNA 1 — Introduction to Networks</span>
             <span class="cv-cert-issuer">Cisco</span>
@@ -219,6 +230,16 @@ const handlePrint = () => window.print()
       <!-- ══════════ FORMATION ══════════ -->
       <section class="cv-section">
         <h2 class="cv-section-title">Formation</h2>
+
+        <div class="cv-entry cv-entry-compact">
+          <div class="cv-entry-header">
+            <div>
+              <h3 class="cv-entry-title">Gray Scott School 2026 — High Performance Computing</h3>
+              <p class="cv-entry-company">CINERI · LAPP & CC-FR (EuroCC / ESCAPE) — 41 h, en anglais</p>
+            </div>
+            <span class="cv-entry-date">Juin — Juil. 2026</span>
+          </div>
+        </div>
 
         <div class="cv-entry cv-entry-compact">
           <div class="cv-entry-header">
