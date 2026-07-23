@@ -8,7 +8,7 @@ const navLinks = [
   { label: 'Contact', to: '/contact' },
 ]
 
-const stack = ['Nuxt 3', 'Tailwind CSS', 'Vercel']
+const stack = ['Go', 'Rust', 'TypeScript', 'Vue / Nuxt', 'Python · HPC', 'Docker / K8s']
 </script>
 
 <template>
@@ -24,8 +24,9 @@ const stack = ['Nuxt 3', 'Tailwind CSS', 'Vercel']
             <span class="font-bold text-xl text-white">Adama<span class="text-orange-500">.</span></span>
           </div>
           <p class="text-sm leading-relaxed max-w-sm text-slate-400">
-            Software Engineer basé au Sénégal. Spécialisé en Go, Rust, Cloud-DevOps et Cybersécurité.
-            Passionné par les systèmes distribués et les architectures performantes.
+            Software Engineer basé au Sénégal. Spécialisé en Go, Rust, Cloud-DevOps, Cybersécurité
+            et calcul haute performance (HPC/GPU). Passionné par les systèmes distribués et les
+            architectures performantes.
           </p>
           <!-- Social -->
           <div class="flex items-center gap-3 mt-6">
@@ -81,7 +82,7 @@ const stack = ['Nuxt 3', 'Tailwind CSS', 'Vercel']
             <span class="text-sm text-emerald-400 font-medium">Disponible</span>
           </div>
           <p class="text-xs text-slate-500 leading-relaxed">
-            Ouvert aux missions freelance et collaborations.
+            Ouvert aux missions freelance, postes CDI et collaborations open source.
           </p>
           <NuxtLink
             to="/contact"
