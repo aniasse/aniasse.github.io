@@ -56,7 +56,7 @@ const experiences = [
     period: '2025 — 2026',
     title: 'Développeur Freelance',
     place: 'Full Stack · Dakar & Remote',
-    description: 'Conception et développement d\'applications pour des clients : e-commerce high-tech (Souhibou Télécom), apps communautaires web + mobile (Jamah Pikine, FSP Mobile), e-commerce mode (Level Officiel) et sites vitrines d\'agence (Vortex). Stack : Go, Vue/Nuxt, React Native, Next.js, Capacitor, Supabase, CinetPay.',
+    description: 'Conception et développement d\'applications pour des clients : e-commerce high-tech (Souhibou Télécom), apps communautaires web + mobile (Jamah Pikine, FSP Mobile) et e-commerce mode (Level Officiel). Stack : Go, Vue/Nuxt, React Native, Next.js, Capacitor, Supabase, CinetPay.',
     tags: ['Go', 'Vue/Nuxt', 'React Native', 'Supabase', 'Docker', 'Stripe'],
     icon: 'material-symbols:rocket-launch',
     color: 'bg-orange-500',

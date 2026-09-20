@@ -22,14 +22,14 @@ const featured = [
   'sendland',
   'thymus',
   'secure-shield',
-  'vortex',
+  'real-time-forum',
   'multiplayer-fps',
   'cloud-design',
 ].map(slug => ALL_PROJECTS.find(p => p.slug === slug)!)
 
 // Stats par catégorie
 const categoryStats = [
-  { label: 'Apps & SaaS', count: 3, icon: 'material-symbols:rocket-launch', color: 'text-emerald-400' },
+  { label: 'Apps & SaaS', count: 2, icon: 'material-symbols:rocket-launch', color: 'text-emerald-400' },
   { label: 'HPC & IA', count: 1, icon: 'material-symbols:memory', color: 'text-indigo-400' },
   { label: 'Sécurité & IA', count: 2, icon: 'material-symbols:security', color: 'text-red-400' },
   { label: 'DevOps & Cloud', count: 7, icon: 'material-symbols:cloud', color: 'text-purple-400' },

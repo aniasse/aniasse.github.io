@@ -95,7 +95,6 @@ const handlePrint = () => window.print()
             <li>Développement d'un écosystème e-commerce high-tech (Souhibou Télécom) : plateforme Next.js, dashboard CRM admin, app mobile, API Go, paiement CinetPay</li>
             <li>Création d'un écosystème communautaire religieux (Jamah Pikine) : plateforme web + dashboard admin + apps mobiles (React Native + Capacitor), streaming/téléchargement de Zikr, Supabase, S3</li>
             <li>Développement de sites e-commerce (Level Officiel) avec WooNuxt et paiement Stripe</li>
-            <li>Réalisation de sites vitrines premium (Vortex Agency) : Nuxt, Three.js, Spline, GSAP, animations 3D</li>
           </ul>
         </div>
 

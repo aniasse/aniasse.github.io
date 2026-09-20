@@ -22,7 +22,7 @@ const experiences = [
     period: '2025 — 2026',
     title: 'Développeur Freelance',
     subtitle: 'Full Stack · Dakar & Remote',
-    description: 'E-commerce, apps communautaires et mobiles pour des clients : Souhibou Télécom (high-tech), Jamah Pikine, Level Officiel, Vortex Agency, FSP Mobile.',
+    description: 'E-commerce, apps communautaires et mobiles pour des clients : Souhibou Télécom (high-tech), Jamah Pikine, Level Officiel, FSP Mobile.',
     tags: ['Go', 'Vue/Nuxt', 'React Native', 'Supabase', 'Stripe'],
     icon: 'material-symbols:rocket-launch',
     color: 'bg-orange-500',
