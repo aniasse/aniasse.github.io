@@ -1,43 +1,27 @@
 <script setup lang="ts">
 import { ALL_PROJECTS, useLangColor, useCategoryIcon, useCategoryAccent } from '~/composables/useProjects'
 
-// Best project — en production
-const bestProject = ALL_PROJECTS.find(p => p.slug === 'ecampus')!
+// Best project — projet phare
+const bestProject = ALL_PROJECTS.find(p => p.slug === 'vexobj')!
 
-// Projet phare (flagship)
-const flagship = ALL_PROJECTS.find(p => p.slug === 'pharmos')!
-
-// SI eCampus — 9 modules en orbite
-const ecampusModules = [
-  { id: 'courses',   angle: -90, label: 'Cours',        group: 'core' as const },
-  { id: 'exams',     angle: -50, label: 'Examens',      group: 'core' as const },
-  { id: 'grades',    angle: -10, label: 'Notes',        group: 'core' as const },
-  { id: 'bulletins', angle:  30, label: 'Bulletins',    group: 'core' as const },
-  { id: 'live',      angle:  70, label: 'Classes live', group: 'comm' as const },
-  { id: 'feed',      angle: 110, label: 'Feed · Chat',  group: 'comm' as const },
-  { id: 'payments',  angle: 150, label: 'Mobile money', group: 'fin'  as const },
-  { id: 'direction', angle: 190, label: 'Direction',    group: 'fin'  as const },
-  { id: 'amigo',     angle: 230, label: 'Amigo · IA',   group: 'ai'   as const },
-]
-
-// SI PharmOS — 9 modules métier
-const pharmosModules = [
-  { id: 'identity',   angle: -90, label: 'Identity',     group: 'core' as const },
-  { id: 'catalog',    angle: -50, label: 'Catalog',      group: 'core' as const },
-  { id: 'patient',    angle: -10, label: 'Patient',      group: 'core' as const },
-  { id: 'stock',      angle:  30, label: 'Stock · FEFO', group: 'ops'  as const },
-  { id: 'pos',        angle:  70, label: 'POS',          group: 'ops'  as const },
-  { id: 'regulatory', angle: 110, label: 'GS1 · Reg',    group: 'ops'  as const },
-  { id: 'accounting', angle: 150, label: 'SYSCOHADA',    group: 'fin'  as const },
-  { id: 'coverage',   angle: 190, label: 'CMU · IPM',    group: 'fin'  as const },
-  { id: 'payments',   angle: 230, label: 'MoMo',         group: 'fin'  as const },
+// SI VexObj — 9 modules dans un seul binaire
+const vexobjModules = [
+  { id: 's3',         angle: -90, label: 'API S3',        group: 'core' as const },
+  { id: 'sigv4',      angle: -50, label: 'SigV4',         group: 'core' as const },
+  { id: 'rest',       angle: -10, label: 'API REST',      group: 'core' as const },
+  { id: 'versioning', angle:  30, label: 'Versioning',    group: 'ops'  as const },
+  { id: 'worm',       angle:  70, label: 'WORM · Lock',   group: 'ops'  as const },
+  { id: 'lifecycle',  angle: 110, label: 'Lifecycle',     group: 'ops'  as const },
+  { id: 'images',     angle: 150, label: 'AVIF · WebP',   group: 'comm' as const },
+  { id: 'video',      angle: 190, label: 'Vignettes',     group: 'comm' as const },
+  { id: 'crypto',     angle: 230, label: 'AES · Réplica', group: 'fin'  as const },
 ]
 
 // 6 projets mis en avant (variété de catégories + SaaS)
 const featured = [
   'sendland',
   'thymus',
-  'vexobj',
+  'secure-shield',
   'vortex',
   'multiplayer-fps',
   'cloud-design',
@@ -45,7 +29,7 @@ const featured = [
 
 // Stats par catégorie
 const categoryStats = [
-  { label: 'Apps & SaaS', count: 5, icon: 'material-symbols:rocket-launch', color: 'text-emerald-400' },
+  { label: 'Apps & SaaS', count: 3, icon: 'material-symbols:rocket-launch', color: 'text-emerald-400' },
   { label: 'HPC & IA', count: 1, icon: 'material-symbols:memory', color: 'text-indigo-400' },
   { label: 'Sécurité & IA', count: 2, icon: 'material-symbols:security', color: 'text-red-400' },
   { label: 'DevOps & Cloud', count: 7, icon: 'material-symbols:cloud', color: 'text-purple-400' },
@@ -89,7 +73,7 @@ const categoryStats = [
         </NuxtLink>
       </div>
 
-      <!-- ── Best Project (eCampus — en production) ── -->
+      <!-- ── Best Project (VexObj — projet phare) ── -->
       <NuxtLink
         :to="`/projects/${bestProject.slug}`"
         v-motion="{
@@ -108,8 +92,18 @@ const categoryStats = [
                 001 · Best Project
               </span>
               <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/5 font-mono text-[9px] uppercase tracking-widest text-emerald-400">
-                <span class="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
-                live
+                <template v-if="bestProject.liveUrl">
+                  <span class="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
+                  live
+                </template>
+                <template v-else-if="bestProject.private">
+                  <Icon name="material-symbols:lock" size="9" />
+                  privé
+                </template>
+                <template v-else>
+                  <Icon name="mdi:github" size="10" />
+                  open source
+                </template>
               </span>
             </div>
 
@@ -117,11 +111,11 @@ const categoryStats = [
               {{ bestProject.title }}
             </h3>
             <p class="font-mono text-[11px] text-slate-500 mb-5 tracking-wide">
-              Plateforme · 9 domaines métier · multi-tenant
+              Stockage objet · 9 modules · un binaire ~14 Mo
             </p>
 
             <p class="text-slate-400 text-sm leading-relaxed mb-6">
-              Plateforme de campus virtuel pour les établissements d'Afrique francophone. Microservices Go orchestrés autour d'un hub multi-tenant — cours, classes virtuelles, finances, IA conversationnelle.
+              Stockage objet S3-compatible auto-hébergé, écrit en Rust. Vérification réelle des signatures AWS SigV4, traitement média intégré, chiffrement au repos et réplication — le tout dans un seul processus.
             </p>
 
             <!-- Architect-style feature ledger -->
@@ -152,6 +146,18 @@ const categoryStats = [
                 {{ bestProject.liveUrl.replace(/^https?:\/\//, '') }}
                 <Icon name="material-symbols:arrow-outward" size="12" />
               </a>
+              <a
+                v-else-if="!bestProject.private"
+                :href="`https://github.com/aniasse/${bestProject.repo}`"
+                target="_blank"
+                rel="noopener noreferrer"
+                @click.stop
+                class="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 hover:text-emerald-300 transition-colors"
+              >
+                <Icon name="mdi:github" size="13" />
+                github.com/aniasse/{{ bestProject.repo }}
+                <Icon name="material-symbols:arrow-outward" size="12" />
+              </a>
               <span class="inline-flex items-center gap-1.5 text-xs text-slate-500 font-mono group-hover:text-emerald-400 transition-colors">
                 voir →
               </span>
@@ -161,13 +167,13 @@ const categoryStats = [
           <!-- Diagram — right column -->
           <div class="lg:col-span-3 p-5 lg:p-6 bg-slate-950">
             <AtomSystemDiagram
-              :modules="ecampusModules"
-              hub-letter="e"
-              hub-label="Plateforme · Tenant"
-              hub-meta="ISOLATION · BRANDING · DROITS"
-              meta-right="9 modules · 1 tenant"
-              eyebrow="ecampus / SI"
-              hub-color="#3b82f6"
+              :modules="vexobjModules"
+              hub-letter="V"
+              hub-label="Cœur · Binaire unique"
+              hub-meta="SQLITE · BLOBS · CACHE"
+              meta-right="9 modules · 1 binaire"
+              eyebrow="vexobj / SI"
+              hub-color="#f97316"
               accent-color="#10b981"
             />
           </div>

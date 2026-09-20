@@ -1,8 +1,8 @@
 <h1 align="center">Adama Niasse</h1>
-<h3 align="center">Software Engineer | Cloud-DevOps | Cybersecurity</h3>
+<h3 align="center">Software Engineer | Cloud-DevOps | HPC &amp; AI | Cybersecurity</h3>
 
 <p align="center">
-  <a href="https://adama.site"><img src="https://img.shields.io/badge/Portfolio-adama.site-orange?style=for-the-badge" alt="Portfolio" /></a>
+  <a href="https://aniasse.github.io"><img src="https://img.shields.io/badge/Portfolio-aniasse.github.io-orange?style=for-the-badge" alt="Portfolio" /></a>
   <a href="https://www.linkedin.com/in/adama-niasse-82878b211"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   <a href="mailto:adamaniasse153@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
   <a href="https://discord.gg/aniasse"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
@@ -12,9 +12,10 @@
 
 ### About Me
 
-Software Engineer de 25 ans, base a Pikine, Dakar, Senegal. Specialise en **Go**, **Rust** et **Vue.js/Nuxt** pour la conception de systemes distribues, securises et performants.
+Software Engineer de 25 ans, base a Pikine, Dakar, Senegal. Specialise en **Go**, **Rust** et **Vue.js/Nuxt** pour la conception de systemes distribues, securises et performants, avec un interet marque pour le **calcul haute performance (HPC/GPU)** et le **machine learning applique**.
 
 - 70+ projets realises a **01Talent Senegal / Zone01 Dakar** (specialisation **Cloud & DevOps**)
+- Certifie **HPC** a la **Gray Scott School 2026** (CINERI / EuroCC) — programmation et optimisation sur architectures heterogenes CPU/GPU
 - Developpeur **Freelance** : ecosystemes e-commerce, apps communautaires, apps mobiles
 - Formation en **ingenierie telecom** (ESTM) et **administration & securite des reseaux** (ESMT Dakar)
 
@@ -23,6 +24,7 @@ Software Engineer de 25 ans, base a Pikine, Dakar, Senegal. Specialise en **Go**
 ### Certifications
 
 <p>
+  <img src="https://img.shields.io/badge/Gray_Scott_School_2026-HPC_on_Heterogeneous_Architectures-6366F1?style=flat-square&logo=nvidia&logoColor=white" />
   <img src="https://img.shields.io/badge/CCNA_1-Introduction_to_Networks-049FD9?style=flat-square&logo=cisco&logoColor=white" />
   <img src="https://img.shields.io/badge/CCNA_2-Switching_Routing_Wireless-049FD9?style=flat-square&logo=cisco&logoColor=white" />
   <img src="https://img.shields.io/badge/CCNA_3-Enterprise_Networking_Security-049FD9?style=flat-square&logo=cisco&logoColor=white" />
@@ -46,6 +48,14 @@ Software Engineer de 25 ans, base a Pikine, Dakar, Senegal. Specialise en **Go**
 ![Bash](https://img.shields.io/badge/Bash-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
 
+**HPC & AI**
+
+![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=pytorch&logoColor=white)
+![JAX](https://img.shields.io/badge/JAX_%2F_Flax-9B59B6?style=for-the-badge&logoColor=white)
+![CUDA](https://img.shields.io/badge/CUDA-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
+![OpenMP](https://img.shields.io/badge/OpenMP-005F9E?style=for-the-badge)
+![Slurm](https://img.shields.io/badge/Slurm_%2F_HPC-2B7A2B?style=for-the-badge)
+
 **Frontend**
 
 ![Vue.js](https://img.shields.io/badge/Vue.js-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
@@ -63,6 +73,7 @@ Software Engineer de 25 ans, base a Pikine, Dakar, Senegal. Specialise en **Go**
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 ![Redis](https://img.shields.io/badge/Redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
+![NATS](https://img.shields.io/badge/NATS-27AAE1?style=for-the-badge&logo=natsdotio&logoColor=white)
 
 **DevOps & Cloud**
 
@@ -85,7 +96,7 @@ Software Engineer de 25 ans, base a Pikine, Dakar, Senegal. Specialise en **Go**
 ![Git](https://img.shields.io/badge/Git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+![Tauri](https://img.shields.io/badge/Tauri-24C8DB?style=for-the-badge&logo=tauri&logoColor=white)
 
 ---
 
@@ -93,16 +104,14 @@ Software Engineer de 25 ans, base a Pikine, Dakar, Senegal. Specialise en **Go**
 
 | Projet | Stack | Description |
 |---|---|---|
-| [Souhibou Telecom](https://adama.site/projects/souhibou-telecom) | Next.js, Go, CinetPay | Ecosysteme e-commerce high-tech : plateforme + dashboard CRM + app mobile |
-| [Jamah Pikine](https://adama.site/projects/jamah-pikine) | Nuxt, React Native, Supabase | Ecosysteme communautaire : plateforme + admin + apps mobiles, streaming Zikr |
+| [SenLand](https://github.com/aniasse/senland) | Python, PyTorch, JAX, CUDA | Cartographie satellite du Senegal, benchmark CPU vs GPU (HPC · Gray Scott School) |
+| [VexObj](https://github.com/aniasse/vexobj) | Rust, S3, SigV4 | Stockage objet S3-compatible auto-heberge, un binaire ~14 Mo |
+| [Thymus](https://github.com/aniasse/thymus) | Rust, Cybersecurity | Systeme immunitaire reseau : detection comportementale sans signatures |
 | [Secure-Shield](https://github.com/aniasse/Secure-Shield) | TypeScript, AI Agent | Plateforme SOC avec agent IA pour detection d'incidents en temps reel |
-| [Cloud-Design](https://github.com/aniasse/Cloud-Design) | Terraform, AWS, ECS | Infrastructure microservices deployee sur AWS |
 | [Multiplayer FPS](https://github.com/aniasse/multiplayer-fps) | Rust, Bevy, UDP | Jeu FPS multijoueur avec netcode optimise |
-| [Vortex Agency](https://adama.site/projects/vortex) | Nuxt, Three.js, GSAP | Site vitrine agence digitale avec animations 3D |
-| [Real-Time Forum](https://github.com/aniasse/real-time-forum) | Go, WebSocket, JWT | Forum avec messagerie instantanee temps reel |
-| [0-Shell](https://github.com/aniasse/0-shell) | Go, Syscalls | Shell Unix complet avec fork/exec, signaux et pipes |
+| [Cloud-Design](https://github.com/aniasse/Cloud-Design) | Terraform, AWS, ECS | Infrastructure microservices deployee sur AWS |
 
-<p align="center"><em>+ 60 autres projets sur <a href="https://adama.site/projects">adama.site/projects</a></em></p>
+<p align="center"><em>+ de 40 autres projets sur <a href="https://aniasse.github.io/projects">aniasse.github.io/projects</a></em></p>
 
 ---
 
@@ -110,6 +119,8 @@ Software Engineer de 25 ans, base a Pikine, Dakar, Senegal. Specialise en **Go**
 
 | Periode | Formation | Etablissement |
 |---|---|---|
+| Juin — Juil. 2026 | Gray Scott School — High Performance Computing (41h) | CINERI · LAPP & CC-FR (EuroCC / ESCAPE) |
+| Avril 2026 — en cours | Tech Academy — Cloud Platform Security | Alibaba Cloud · Dakar 2026 |
 | 2022 — 2025 | Full Stack Developer (specialisation Cloud & DevOps) | Zone01 Dakar |
 | 2022 — 2023 | Licence pro Administration & Securite des Reseaux | ESMT Dakar |
 | 2020 — 2022 | Ingenierie des telecommunications | ESTM |
@@ -141,5 +152,5 @@ Software Engineer de 25 ans, base a Pikine, Dakar, Senegal. Specialise en **Go**
 
 <p align="center">
   <strong>Adama Niasse</strong> — Pikine, Dakar, Senegal<br/>
-  <a href="https://adama.site">adama.site</a> · <a href="mailto:adamaniasse153@gmail.com">adamaniasse153@gmail.com</a> · +221 77 324 86 63
+  <a href="https://aniasse.github.io">aniasse.github.io</a> · <a href="mailto:adamaniasse153@gmail.com">adamaniasse153@gmail.com</a> · +221 77 324 86 63
 </p>

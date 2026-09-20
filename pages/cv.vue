@@ -179,8 +179,6 @@ const handlePrint = () => window.print()
         <h2 class="cv-section-title">Projets Clés</h2>
 
         <ul class="cv-list">
-          <li><strong>eCampus</strong> — Plateforme de campus virtuel multi-tenant pour l'Afrique francophone : 22+ microservices Go, classes virtuelles LiveKit, IA conversationnelle, mobile money. En production sur ecampus-sn.com</li>
-          <li><strong>PharmOS</strong> — Plateforme logicielle pour officines pharmaceutiques (Sénégal/UEMOA) : POS cloud-first, traçabilité GS1, tiers payant CMU/IPM, comptabilité SYSCOHADA</li>
           <li><strong>SenLand</strong> (HPC · Gray Scott School) — Cartographie de l'occupation des sols du Sénégal par deep learning ; un même code CPU vs GPU (PyTorch/JAX), benchmark strong-scaling, segmentation mIoU 0,62</li>
           <li><strong>VexObj</strong> (Open Source · Rust) — Stockage objet S3-compatible auto-hébergé (SigV4 réel), traitement média à la volée, chiffrement AES-256 et réplication, dans un seul binaire ~14 Mo</li>
           <li><strong>Thymus</strong> (Open Source · Rust) — « Système immunitaire » réseau : détection comportementale des menaces sans signatures, mode passif SPAN sans agent, Core + Sensors</li>
